@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://surourou8.github.io/2024/10/09/JavaWeb%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/VueRouter%E8%B7%AF%E7%94%B1.png">
 <meta property="og:image" content="http://surourou8.github.io/2024/10/09/JavaWeb%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%89%93%E5%8C%85.png">
 <meta property="article:published_time" content="2024-10-09T12:14:16.000Z">
-<meta property="article:modified_time" content="2024-10-09T12:15:28.475Z">
+<meta property="article:modified_time" content="2024-10-10T08:55:20.165Z">
 <meta property="article:author" content="Su Rourou">
 <meta property="article:tag" content="JavaWeb">
 <meta name="twitter:card" content="summary_large_image">
@@ -444,21 +444,21 @@
 <td>定义提交按钮 &#x2F; 重置按钮 &#x2F; 可点击按钮</td>
 </tr>
 </tbody></table>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a><strong>CSS</strong></h3><p><strong><code> CSS</code>（Cascading Style Sheet）：层叠样式表，用于控制页面的样式（表现）。</strong></p>
-<h4 id="CSS引入方式"><a href="#CSS引入方式" class="headerlink" title="CSS引入方式"></a><strong>CSS引入方式</strong></h4><p><strong>1.行内样式：写在标签的style属性中（不推荐）。</strong></p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a><strong>CSS</strong></h3><p><code> CSS</code>（Cascading Style Sheet）：层叠样式表，用于控制页面的样式（表现）。</p>
+<h4 id="CSS引入方式"><a href="#CSS引入方式" class="headerlink" title="CSS引入方式"></a><strong>CSS引入方式</strong></h4><p>1.<strong>行内样式</strong>：写在标签的style属性中（不推荐）。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;xxx: xxx; xxx: xxx;&quot;</span>&gt;</span>中国新闻网<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>2.内嵌样式：写在<code>style</code>标签中（可以写在页面任何位置，但通常约定写在<code>head</code>标签中）。</strong></p>
+<p>2.<strong>内嵌样式</strong>：写在<code>style</code>标签中（可以写在页面任何位置，但通常约定写在<code>head</code>标签中）。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">  <span class="hljs-selector-tag">h1</span> &#123;</span><br><span class="language-css">     xxx: xxx; </span><br><span class="language-css">     xxx: xxx;</span><br><span class="language-css">  &#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>3.外联样式：写在一个单独的<code>.css</code>文件中（需要通过<code>link</code>标签在网页中引入）。</strong></p>
+<p>3.<strong>外联样式</strong>：写在一个单独的<code>.css</code>文件中（需要通过<code>link</code>标签在网页中引入）。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-tag">h1</span> &#123;<br>   xxx: xxx; <br>   xxx: xxx;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/news.css&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
 
-<h4 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a><strong>CSS选择器</strong></h4><p><strong>CSS选择器用来选取需要设置样式的元素（标签）。</strong></p>
+<h4 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a><strong>CSS选择器</strong></h4><p>CSS选择器用来选取需要设置样式的元素（标签）。</p>
 <p><strong>1.元素选择器</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML">h1 &#123;<br>    color: red;<br>&#125;<br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span> Hello CSS <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
@@ -478,19 +478,19 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>关键字</strong></td>
-<td><strong>预定义的颜色名</strong></td>
-<td><strong>red、green、blue…</strong></td>
+<td>关键字</td>
+<td>预定义的颜色名</td>
+<td>red、green、blue…</td>
 </tr>
 <tr>
-<td><strong>rgb表示法</strong></td>
-<td><strong>红绿蓝三原色，每项取值范围：0-255</strong></td>
-<td><strong>rgb(0,0,0)、rgb(255,255,255)、rgb(255,0,0)</strong></td>
+<td>rgb表示法</td>
+<td>红绿蓝三原色，每项取值范围：0-255</td>
+<td>rgb(0,0,0)、rgb(255,255,255)、rgb(255,0,0)</td>
 </tr>
 <tr>
-<td><strong>十六进制表示法</strong></td>
-<td><strong>#开头，将数字转换成十六进制表示</strong></td>
-<td><strong>#000000、#ff0000、#cccccc，简写：#000、#ccc</strong></td>
+<td>十六进制表示法</td>
+<td>#开头，将数字转换成十六进制表示</td>
+<td>#000000、#ff0000、#cccccc，简写：#000、#ccc</td>
 </tr>
 </tbody></table>
 <h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>JavaScript</code>是一门跨平台、面向对象的脚本语言。是用来控制网页行为的，它能使网页可交互。</p>
