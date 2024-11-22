@@ -1,0 +1,938 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Su Rourou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Java快速入门视频链接：Java入门基础视频教程，java零基础自学就选黑马程序员Java入门教程（含Java项目和Java真题）_哔哩哔哩_bilibili JDK的选择安装和下载LTS：long-term support 长期支持版 JDK-8 LTS（目前企业常用） 下载JDK：oracle.com官网 Java 17 Windows x64 installer JDK是否安装成功：jav">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础">
+<meta property="og:url" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="surourou">
+<meta property="og:description" content="Java快速入门视频链接：Java入门基础视频教程，java零基础自学就选黑马程序员Java入门教程（含Java项目和Java真题）_哔哩哔哩_bilibili JDK的选择安装和下载LTS：long-term support 长期支持版 JDK-8 LTS（目前企业常用） 下载JDK：oracle.com官网 Java 17 Windows x64 installer JDK是否安装成功：jav">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/VScode%E5%AE%89%E8%A3%85Java%E9%85%8D%E7%BD%AEsettings.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E9%BB%98%E8%AE%A4%E5%80%BC.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E6%8C%87%E5%90%91%E5%90%8C%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E6%96%B9%E6%B3%95%E7%9A%84%E6%A0%BC%E5%BC%8F.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E9%80%9A%E8%BF%87%E2%80%9C%E2%80%9D%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E9%80%9A%E8%BF%87new%E6%9E%84%E9%80%A0%E5%99%A8%E5%BE%97%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E4%BE%8B%E9%A2%981.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E4%BE%8B%E9%A2%982.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/ArrayList%E6%96%B9%E6%B3%95.png">
+<meta property="article:published_time" content="2024-09-19T10:24:32.000Z">
+<meta property="article:modified_time" content="2024-09-28T10:25:55.083Z">
+<meta property="article:author" content="Su Rourou">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://surourou8.github.io/2024/09/19/Java%E5%9F%BA%E7%A1%80/VScode%E5%AE%89%E8%A3%85Java%E9%85%8D%E7%BD%AEsettings.png">
+  
+  
+  
+  <title>Java基础 - surourou</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"surourou8.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"rJpGTwUuJT20doYmqiMHV4UP-gzGzoHsz","app_key":"S6LRxMNdv70LjI3DIZEkvFDc","server_url":"https://rjpgtwuu.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>surourou</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java基础"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-19 18:24" pubdate>
+          2024年9月19日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          25 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Java基础</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="Java快速入门"><a href="#Java快速入门" class="headerlink" title="Java快速入门"></a>Java快速入门</h3><p>视频链接：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Cv411372m/">Java入门基础视频教程，java零基础自学就选黑马程序员Java入门教程（含Java项目和Java真题）_哔哩哔哩_bilibili</a></p>
+<h4 id="JDK的选择安装和下载"><a href="#JDK的选择安装和下载" class="headerlink" title="JDK的选择安装和下载"></a>JDK的选择安装和下载</h4><p>LTS：long-term support 长期支持版</p>
+<p>JDK-8 LTS（目前企业常用）</p>
+<p>下载JDK：oracle.com官网</p>
+<p>Java 17 Windows x64 installer</p>
+<p>JDK是否安装成功：java.exe和javac.exe是否安装成功（命令行窗口cmd输入：java和javac）</p>
+<p>验证版本：java -version和javac -version（版本为17）</p>
+<p><code>javac.exe</code>：编译工具</p>
+<p><code>java.exe</code>：执行工具（对编译后的程序进行执行）</p>
+<h5 id="VSCode配置java运行环境"><a href="#VSCode配置java运行环境" class="headerlink" title="VSCode配置java运行环境"></a>VSCode配置java运行环境</h5><p>1.下载插件<code>Extension Pack for Java</code>（Microsoft官方）</p>
+<p>2.<code>FIle</code>-&gt;<code>Preferences</code>-&gt;<code>Settings</code>（或者快捷键Ctrl+’,’），搜索<code>java home</code>，在<code>Startup</code>选项中点击<code>Edit in setting.json</code>，修改如下（这里填写的是安装的Java的路径）：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-string">&quot;java.jdt.ls.java.home&quot;</span>: <span class="hljs-string">&quot;D:<span class="hljs-subst">\\</span>Programs<span class="hljs-subst">\\</span>Java<span class="hljs-subst">\\</span>jdk-21&quot;</span>,<br></code></pre></td></tr></table></figure>
+
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/VScode%E5%AE%89%E8%A3%85Java%E9%85%8D%E7%BD%AEsettings.png" srcset="/img/loading.gif" lazyload alt="1660152660273"></p>
+<p>参考链接：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39287724/article/details/115765445">VSCode下载安装和配置Java环境_java下载vscode-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/278838022">如何在vscode中配置java运行环境？ - 知乎 (zhihu.com)</a></p>
+<h4 id="Java：开发helloworld"><a href="#Java：开发helloworld" class="headerlink" title="Java：开发helloworld"></a>Java：开发helloworld</h4><p>HelloWorld.java（源代码）–&gt;（使用javac编译）HelloWorld.class（字节码文件）–&gt;（使用java运行）</p>
+<p>运行命令：</p>
+<p><code>javac HelloWorld.java</code></p>
+<p><code>java HelloWorld</code></p>
+<h4 id="Java程序的执行原理"><a href="#Java程序的执行原理" class="headerlink" title="Java程序的执行原理"></a>Java程序的执行原理</h4><p>编译成计算机底层能识别的机器语言</p>
+<p>机器语言-&gt;汇编语言-&gt;高级语言</p>
+<h4 id="JDK的组成和跨平台原理"><a href="#JDK的组成和跨平台原理" class="headerlink" title="JDK的组成和跨平台原理"></a>JDK的组成和跨平台原理</h4><p>JVM（Java Virtual Machine）：Java虚拟机，运行Java程序</p>
+<p>核心类库：Java写好的程序，给程序员调用</p>
+<p>JRE（Java Runtime Environment）：Java的运行环境，包括JVM和核心类库</p>
+<p>JDK（Java Development Kit）：Java开发工具包，包括JRE和开发工具（java、javac、等）</p>
+<p>Java的跨平台：</p>
+<p>一次编译，处处可用（对不同电脑系统提供了不同虚拟机）</p>
+<h4 id="IDEA开发Java程序"><a href="#IDEA开发Java程序" class="headerlink" title="IDEA开发Java程序"></a>IDEA开发Java程序</h4><p>1.创建工程new Project（空工程）</p>
+<p>2.创建模块new Module</p>
+<p>3.创建包new Package</p>
+<p>4.创建类new class</p>
+<p>编译后的class文件在工程路径下的out文件夹。</p>
+<p><code>HelloWorld.java</code>文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;hello world&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Java基础语法"><a href="#Java基础语法" class="headerlink" title="Java基础语法"></a>Java基础语法</h3><p>‘A’：65</p>
+<p>‘a’：97</p>
+<p>‘0’：48</p>
+<p>二进制：0B或0b开头</p>
+<p>八进制：0开头</p>
+<p>十六进制：0X或0x开头</p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>基本数据类型+引用数据类型</p>
+<p>基本数据类型：4大类8种</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png" srcset="/img/loading.gif" lazyload></p>
+<p>注意：</p>
+<p>1.整型默认是int，加上l&#x2F;L为long，如888L</p>
+<p>2.浮点型默认是double，加上f&#x2F;F为float，如3.14F</p>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><h5 id="自动类型转换（小-大）"><a href="#自动类型转换（小-大）" class="headerlink" title="自动类型转换（小-&gt;大）"></a>自动类型转换（小-&gt;大）</h5><p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="表达式的自动类型转换"><a href="#表达式的自动类型转换" class="headerlink" title="表达式的自动类型转换"></a>表达式的自动类型转换</h5><p>（最终结果由表达式中的<code>最高类型</code>决定）</p>
+<p>表达式中，<code>byte</code>、<code>short</code>、<code>char</code>是直接转成<code>int</code>类型参与运算。（目的：防止加法超出表示范围，所以扩大字节为int）</p>
+<p>注意：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">byte</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br><span class="hljs-type">byte</span> <span class="hljs-variable">y</span> <span class="hljs-operator">=</span> <span class="hljs-number">30</span>;<br><span class="hljs-comment">// x = x + y; //这句话会编译错误，因为byte类型是转成int类型进行运算，无法赋值给byte类型，应改为：</span><br>x = (<span class="hljs-type">byte</span>)x+y;<br><span class="hljs-comment">//上述形式也可以相当于 x+=y;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="强制类型转换（大-小，会报错）"><a href="#强制类型转换（大-小，会报错）" class="headerlink" title="强制类型转换（大-&gt;小，会报错）"></a>强制类型转换（大-&gt;小，会报错）</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;<br><span class="hljs-type">byte</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> (<span class="hljs-type">byte</span>)a;<br></code></pre></td></tr></table></figure>
+
+<p>强制类型转换只截取最低的字节。</p>
+<p>浮点-&gt;整形：只保留整数部分，截断小数部分</p>
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>逻辑运算符：&amp;（逻辑与）、|（逻辑或）、！（非）、^（异或：前后条件结果相同返回false，不同返回true）</p>
+<p>&amp;&amp;（短路与）：结果与&amp;一样，左边为false，则右边不执行</p>
+<p>||（短路或）：结果与|一样，左边为true，则右边不执行</p>
+<p>&amp;和|左右边都要执行</p>
+<p>注：一般用&amp;&amp;、||、！</p>
+<h3 id="Java流程控制"><a href="#Java流程控制" class="headerlink" title="Java流程控制"></a>Java流程控制</h3><h4 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h4><p>switch的表达式类型只能是byte、short、int、char，JDK5开始支持枚举，JDK7开始支持String，不支持double（精度问题，0.1+0.2&#x3D;0.3000004，无法和正确的0.3匹配）、float、long（long的范围太大了）</p>
+<p>case的值<strong>不允许重复</strong>，且只能是<strong>字面量</strong>（具体的数、字母），不能是变量</p>
+<p>case必须写break，不然会有<strong>穿透性</strong>（穿透性可以用于：多个值对应的case块的操作是相同的）</p>
+<h4 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h4><p>for和while功能上完全一样</p>
+<p>do-while：一定会执行一次（可用于抢票软件，先执行抢票再进行判断）</p>
+<h3 id="数组（引用数据类型）"><a href="#数组（引用数据类型）" class="headerlink" title="数组（引用数据类型）"></a>数组（引用数据类型）</h3><h4 id="静态初始化数组"><a href="#静态初始化数组" class="headerlink" title="静态初始化数组"></a>静态初始化数组</h4><p>定义数组时同时确定具体元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">//完整格式</span><br><span class="hljs-type">int</span>[] ages = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;<span class="hljs-number">12</span>,<span class="hljs-number">13</span>,<span class="hljs-number">14</span>&#125;;<br><span class="hljs-type">double</span>[] scores = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[]&#123;<span class="hljs-number">99</span>, <span class="hljs-number">98.5</span>, <span class="hljs-number">98.888</span>&#125;;<br><br><span class="hljs-comment">//简化格式</span><br><span class="hljs-type">int</span>[] ages = &#123;<span class="hljs-number">12</span>,<span class="hljs-number">13</span>,<span class="hljs-number">14</span>&#125;;<br><span class="hljs-comment">//也可以写成</span><br><span class="hljs-type">int</span> ages[] = &#123;<span class="hljs-number">12</span>,<span class="hljs-number">13</span>,<span class="hljs-number">14</span>&#125;;<br><br><span class="hljs-comment">//数组长度：数组.length</span><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span><span class="hljs-number">0</span> ; i &lt; ages.length; i++)&#123;<br>     System.out.print(ages[i]);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="动态初始化数组"><a href="#动态初始化数组" class="headerlink" title="动态初始化数组"></a>动态初始化数组</h4><p>定义数组时不存入具体元素值，只确定数组存储的<strong>数据类型</strong>和<strong>数据长度</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">int</span>[] ages = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">3</span>]; <span class="hljs-comment">//默认值全为0，ages=[0,0,0]</span><br></code></pre></td></tr></table></figure>
+
+<p>动态初始化数组元素默认值：</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E9%BB%98%E8%AE%A4%E5%80%BC.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="Java内存分配"><a href="#Java内存分配" class="headerlink" title="Java内存分配"></a>Java内存分配</h4><p>.java文件是编译成.class文件，然后将.class文件放到JVM虚拟机中运行的。</p>
+<p>JVM虚拟机内存分配（Java内存分配）：方法区、堆、栈</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D.png" srcset="/img/loading.gif" lazyload></p>
+<p>数组在计算机中的执行原理：</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png" srcset="/img/loading.gif" lazyload></p>
+<p>多个变量指向同一个数组：</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E6%8C%87%E5%90%91%E5%90%8C%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84.png" srcset="/img/loading.gif" lazyload></p>
+<p>如果某个数组变量存储的地址是null，那么该变量将不再指向任何数组对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">int</span>[] arr1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;<br><span class="hljs-type">int</span>[] arr2 = arr1;<br>System.out.println(arr2);<br><br>arr2 = <span class="hljs-literal">null</span>;<br>System.out.println(arr2);<span class="hljs-comment">//输出为null，但不可访问arr2[0]，这是空指针，无法访问</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="方法的格式"><a href="#方法的格式" class="headerlink" title="方法的格式"></a>方法的格式</h4><p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E6%96%B9%E6%B3%95%E7%9A%84%E6%A0%BC%E5%BC%8F.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">//有参数，有返回值</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sum</span> <span class="hljs-params">( <span class="hljs-type">int</span> a , <span class="hljs-type">int</span> b )</span>&#123;<br>	<span class="hljs-keyword">return</span> a + b;<br>&#125;<br><br><span class="hljs-comment">//无参数，无返回值</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span> <span class="hljs-params">()</span>&#123;<br>    System.out.println(<span class="hljs-string">&quot;hello world&quot;</span>);<br>&#125;<br><br><span class="hljs-comment">//有参数，无返回值</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printN</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        System.out.println(<span class="hljs-string">&quot;hello world&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意问题：</p>
+<p>1.方法在类中的位置放前放后无所谓，但是一个方法不能定义在另一个方法里面。</p>
+<p>2.return之后不能写代码。（运用<code>return ;</code>在无返回值方法中，可以跳出并立即结束当前方法的执行。）</p>
+<h4 id="方法在计算机中的执行原理"><a href="#方法在计算机中的执行原理" class="headerlink" title="方法在计算机中的执行原理"></a>方法在计算机中的执行原理</h4><p>方法被调用时，进入<strong>栈内存</strong>中运行。</p>
+<h4 id="Java的参数传递机制（都是值传递）"><a href="#Java的参数传递机制（都是值传递）" class="headerlink" title="Java的参数传递机制（都是值传递）"></a>Java的参数传递机制（都是值传递）</h4><p><strong>值传递</strong>：传输实参变量中存储的值的<strong>副本</strong>。</p>
+<p>基本类型的参数传递：值传递（存储的数据）</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92.png" srcset="/img/loading.gif" lazyload></p>
+<p>引用类型的参数传递：值传递（存储的地址）</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h4><p>方法重载：一个类中，多个方法名称相同，但是形参列表不同。</p>
+<p>注意：</p>
+<p>1.方法重载只要求：<strong>方法名称相同</strong>、<strong>形参列表不同</strong>。（修饰符，返回值类型是否一样无所谓）</p>
+<p>2.<strong>形参列表不同</strong>：形参<strong>个数</strong>、<strong>类型</strong>、<strong>顺序</strong>不同，与形参名称无关。</p>
+<h3 id="面向对象编程（OOP）"><a href="#面向对象编程（OOP）" class="headerlink" title="面向对象编程（OOP）"></a>面向对象编程（OOP）</h3><p>对象：特殊的数据结构。对象是用<strong>类</strong>new出来的。</p>
+<p>class（类）：对象的设计图&#x2F;对象的模板。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">//编写一个类作为对象</span><br><span class="hljs-keyword">package</span> com.itheima.hello;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> &#123;<br>    <span class="hljs-comment">//成员变量：类中定义的变量（对象的属性）</span><br>    String name;<br>    <span class="hljs-type">int</span> age;<br>	<br>    <span class="hljs-comment">//面向对象的方法不要加static</span><br>    <span class="hljs-comment">//成员方法：类中定义的方法（对象的行为）</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printName</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(name);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printAge</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(age);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">//使用上述的对象</span><br><span class="hljs-keyword">package</span> com.itheima.hello;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>       <span class="hljs-type">Student</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>();<br>        s1.name = <span class="hljs-string">&quot;surourou&quot;</span>;<br>        s1.age = <span class="hljs-number">18</span>;<br>        s1.printName();<br>        s1.printAge();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="对象在计算机中的执行原理"><a href="#对象在计算机中的执行原理" class="headerlink" title="对象在计算机中的执行原理"></a>对象在计算机中的执行原理</h4><p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png" srcset="/img/loading.gif" lazyload></p>
+<p>注意：</p>
+<p>1.<strong>成员变量</strong>：类中定义的变量（对象的属性）。</p>
+<p><strong>成员方法</strong>：类中定义的方法（对象的行为）。</p>
+<p>2.成员变量存在默认值（和数组一样）。</p>
+<p>3.一个代码文件中，可以写多个class类，但只能有一个用public修饰。且public修饰的类名必须为代码文件名。</p>
+<p>4.Java存在<strong>自动垃圾回收机制</strong>，会自动清楚垃圾对象。</p>
+<h4 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h4><p><strong>this</strong>：一个变量，用在方法中，<strong>来拿到当前对象</strong>。</p>
+<p>应用：解决变量名称冲突问题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">package</span> com.itheima.hello;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> &#123;<br>    String name;<br>    <span class="hljs-type">int</span> age;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printThis</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-built_in">this</span>);<span class="hljs-comment">//打印当前对象的地址，不同对象的地址不一样</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>方法里的this是如何拿到调用它的对象的：传入了参数this</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printThis</span><span class="hljs-params">(Student <span class="hljs-built_in">this</span>)</span>&#123;<br>	System.out.println(<span class="hljs-built_in">this</span>);<span class="hljs-comment">//打印当前对象的地址，不同对象的地址不一样</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">package</span> com.itheima.hello;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> &#123;<br>    String name;<br>    <span class="hljs-type">int</span> age;<br><br>    <span class="hljs-comment">//无参数构造器</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Student</span><span class="hljs-params">()</span> &#123;<br><br>    &#125;<br><br>    <span class="hljs-comment">//有参数构造器</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Student</span><span class="hljs-params">(String name, <span class="hljs-type">int</span> age)</span> &#123;<br><br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>1.类在设计时，如果不写构造器，Java会为类自动生成一个无参构造器。</p>
+<p>2.若定义了有参数构造器，Java不会自动生成无参构造器。</p>
+<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><p>面向对象的三大特征：封装、继承、多态</p>
+<p>封装：用类设计对象处理某一个事物的数据时，应该把<strong>要处理的数据</strong>，以及<strong>处理这些数据的方法</strong>，设计到<strong>一个对象中</strong>去。</p>
+<p>封装的设计规范：合理隐藏，合理暴露</p>
+<p>公开成员：public</p>
+<p>隐藏成员：private</p>
+<h4 id="实体类JavaBean"><a href="#实体类JavaBean" class="headerlink" title="实体类JavaBean"></a>实体类JavaBean</h4><p>实体类：</p>
+<p>1.这个类中的成员变量都要私有，并且要对外提供相应的getXxx ，setXxx方法。</p>
+<p>2.类中必须要有一个公共的无参的构造器。</p>
+<p>实体操作类：具体的操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">package</span> com.itheima.hello;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">StudentOperator</span> &#123;<br>    <span class="hljs-keyword">private</span> Student student;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">StudentOperator</span><span class="hljs-params">(Student student)</span> &#123;<br>        <span class="hljs-built_in">this</span>.student = student;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span>  <span class="hljs-title function_">print</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(student.name + <span class="hljs-string">&quot;,&quot;</span> + student.age);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="成本变量和局部变量"><a href="#成本变量和局部变量" class="headerlink" title="成本变量和局部变量"></a>成本变量和局部变量</h4><p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h3><h4 id="包"><a href="#包" class="headerlink" title="包"></a>包</h4><p>包：类似文件夹</p>
+<p>注意：<br>1.同一个包下的类，互相可以直接调用。</p>
+<p>2.调用其他包下的程序，必须在当前程序中导包。导包格式：import 包名.类名;</p>
+<p>3.调用Java提供的程序需要先导包才可以使用；但是Java.lang包下的程序不需要导包的，可以直接使用。</p>
+<p>4.要调用多个不同包下的程序，而这些程序名正好一样，此时默认只能导入一个程序，另一个程序必须带包名访问。</p>
+<h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><h5 id="String创建对象"><a href="#String创建对象" class="headerlink" title="String创建对象"></a>String创建对象</h5><p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">//1.直接创建</span><br><span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;surourou&quot;</span>;<br><br><span class="hljs-comment">//2.调用String类的构造器</span><br><span class="hljs-comment">//(1)空白字符串</span><br><span class="hljs-type">String</span> <span class="hljs-variable">name0</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>();<br><span class="hljs-comment">//(2)字符串</span><br><span class="hljs-type">String</span> <span class="hljs-variable">name1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;surourou&quot;</span>);<br><span class="hljs-comment">//(3)字符数组</span><br><span class="hljs-type">char</span>[] names = &#123;<span class="hljs-string">&#x27;s&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>&#125;;<br><span class="hljs-type">String</span> <span class="hljs-variable">name2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(names);<br><span class="hljs-comment">//(4)字节数组</span><br><span class="hljs-type">byte</span>[] bytes = &#123;<span class="hljs-number">115</span>, <span class="hljs-number">114</span>, <span class="hljs-number">114</span>&#125;;<br><span class="hljs-type">String</span> <span class="hljs-variable">name3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(bytes);<br><br>System.out.println(name+ <span class="hljs-string">&quot; &quot;</span> + name0 + <span class="hljs-string">&quot; &quot;</span> + name1  + <span class="hljs-string">&quot; &quot;</span> + name2 +<span class="hljs-string">&quot; &quot;</span>+ name3);<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="String常用方法"><a href="#String常用方法" class="headerlink" title="String常用方法"></a>String常用方法</h5><p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.png" srcset="/img/loading.gif" lazyload></p>
+<p>注意：</p>
+<p>1.String的对象是<strong>不可变字符串对象</strong>。</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1.png" srcset="/img/loading.gif" lazyload></p>
+<p>2.只要是以“…”方式写出的字符串对象，会在<strong>堆内存中的字符串常量池</strong>中存储，且相同内容的字符串只存储一份。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">String</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;srr&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">s2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;srr&quot;</span>;<br>System.out.println(s1 == s2);<span class="hljs-comment">//true</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E9%80%9A%E8%BF%87%E2%80%9C%E2%80%9D%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86.png" srcset="/img/loading.gif" lazyload></p>
+<p>3.通过new方式创建字符串对象，每new一次都会产生一个新的对象放在堆内存中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">char</span>[] names = &#123;<span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>&#125;;<br><span class="hljs-type">String</span> <span class="hljs-variable">s3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(names);<br><span class="hljs-type">String</span> <span class="hljs-variable">s4</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(names);<br>System.out.println(s3 == s4);<span class="hljs-comment">//false</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/%E9%80%9A%E8%BF%87new%E6%9E%84%E9%80%A0%E5%99%A8%E5%BE%97%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1.png" srcset="/img/loading.gif" lazyload></p>
+<p>案例：</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E4%BE%8B%E9%A2%981.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/String%E4%BE%8B%E9%A2%982.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="ArrayList（集合的一种）"><a href="#ArrayList（集合的一种）" class="headerlink" title="ArrayList（集合的一种）"></a>ArrayList（集合的一种）</h4><p>集合：容器，存储数据，大小可变。</p>
+<p>ArrayList：一种集合，是泛型类，可以用来约束存储的数据类型。</p>
+<p>注意：集合和泛型都不支持基本数据类型，只能支持引用数据类型。</p>
+<p>如：<code>ArrayList&lt;int&gt;</code>是错误的，应该使用<code>ArrayList&lt;Integer&gt;</code>。</p>
+<p><img src="/2024/09/19/Java%E5%9F%BA%E7%A1%80/ArrayList%E6%96%B9%E6%B3%95.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">//1.不约束存储的数据类型</span><br><span class="hljs-type">ArrayList</span> <span class="hljs-variable">list</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();<br><span class="hljs-comment">//或者ArrayList&lt;Object&gt; list = new ArrayList&lt;&gt;();//推荐这样写</span><br>list.add(<span class="hljs-string">&quot;A&quot;</span>);<br>list.add(<span class="hljs-string">&quot;B&quot;</span>);<br>list.add(<span class="hljs-number">999</span>);<br>list.add(<span class="hljs-number">55.4</span>);<br>System.out.println(list);<br><br><span class="hljs-comment">//2.约束存储的数据类型</span><br><span class="hljs-comment">//ArrayList&lt;String&gt; list1 = new ArrayList&lt;String&gt;(); //法一</span><br>ArrayList&lt;String&gt; list1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();<span class="hljs-comment">//法二，jdk1.7之后支持，不用在后面的ArrayList中写&lt;String&gt;</span><br>list1.add(<span class="hljs-string">&quot;S&quot;</span>);<br>list1.add(<span class="hljs-string">&quot;R&quot;</span>);<br>list1.add(<span class="hljs-string">&quot;R&quot;</span>);<br>System.out.println(list1);<br></code></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>1.从集合中遍历元素，并筛选出元素删除它，应该如何操作才能不出bug？</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs subunit">方式一：每次删除一个数据后，索引<span class="hljs-string">-1</span>。<br>方式二：从集合后面遍历然后删除，可以避免漏掉元素。<br></code></pre></td></tr></table></figure>
+
+<p>2.集合容器中存储的是<strong>每个对象在堆内存中的地址</strong>。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java基础</div>
+      <div>http://surourou8.github.io/2024/09/19/Java基础/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Su Rourou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年9月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/09/20/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="Java面向对象">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java面向对象</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/18/Hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" title="Hexo插入图片">
+                        <span class="hidden-mobile">Hexo插入图片</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"rJpGTwUuJT20doYmqiMHV4UP-gzGzoHsz","appKey":"S6LRxMNdv70LjI3DIZEkvFDc","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访问数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

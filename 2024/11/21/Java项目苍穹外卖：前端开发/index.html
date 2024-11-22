@@ -1,0 +1,1116 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Su Rourou">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="苍穹外卖苍穹外卖前端开发Vue基础基于脚手架创建前端工程1.环境要求：  node.js：前端项目的运行环境。 npm：JavaScript的包管理工具。 Vue CLI：基于Vue进行快速开发的完整系统，实现交互式的项目脚手架。  2.使用Vue CLI创建前端工程：  方式一：vue create 项目名称 方式二：vue ui  3.项目结构  4.启动前端项目：npm run serve。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java项目苍穹外卖：前端开发">
+<meta property="og:url" content="http://surourou8.github.io/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/index.html">
+<meta property="og:site_name" content="surourou">
+<meta property="og:description" content="苍穹外卖苍穹外卖前端开发Vue基础基于脚手架创建前端工程1.环境要求：  node.js：前端项目的运行环境。 npm：JavaScript的包管理工具。 Vue CLI：基于Vue进行快速开发的完整系统，实现交互式的项目脚手架。  2.使用Vue CLI创建前端工程：  方式一：vue create 项目名称 方式二：vue ui  3.项目结构  4.启动前端项目：npm run serve。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://surourou8.github.io/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/Vue%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/axios%E7%9A%84API%E5%88%97%E8%A1%A8.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/Vue%E8%B7%AF%E7%94%B1%E7%BB%84%E6%88%90.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/%E8%B7%AF%E7%94%B1%E8%B7%AF%E5%BE%84%E5%92%8C%E8%A7%86%E5%9B%BE%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript%E4%BB%A3%E7%A0%81%E7%BC%96%E8%AF%91.png">
+<meta property="og:image" content="http://surourou8.github.io/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png">
+<meta property="article:published_time" content="2024-11-21T09:20:28.000Z">
+<meta property="article:modified_time" content="2024-11-21T09:24:40.986Z">
+<meta property="article:author" content="Su Rourou">
+<meta property="article:tag" content="Java项目苍穹外卖">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://surourou8.github.io/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/Vue%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png">
+  
+  
+  
+  <title>Java项目苍穹外卖：前端开发 - surourou</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"surourou8.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"rJpGTwUuJT20doYmqiMHV4UP-gzGzoHsz","app_key":"S6LRxMNdv70LjI3DIZEkvFDc","server_url":"https://rjpgtwuu.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>surourou</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java项目苍穹外卖：前端开发"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-21 17:20" pubdate>
+          2024年11月21日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          63 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Java项目苍穹外卖：前端开发</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="苍穹外卖"><a href="#苍穹外卖" class="headerlink" title="苍穹外卖"></a>苍穹外卖</h1><h2 id="苍穹外卖前端开发"><a href="#苍穹外卖前端开发" class="headerlink" title="苍穹外卖前端开发"></a>苍穹外卖前端开发</h2><h3 id="Vue基础"><a href="#Vue基础" class="headerlink" title="Vue基础"></a>Vue基础</h3><h4 id="基于脚手架创建前端工程"><a href="#基于脚手架创建前端工程" class="headerlink" title="基于脚手架创建前端工程"></a>基于脚手架创建前端工程</h4><p>1.环境要求：</p>
+<ul>
+<li><code>node.js</code>：前端项目的运行环境。</li>
+<li><code>npm</code>：<code>JavaScript</code>的包管理工具。</li>
+<li><code>Vue CLI</code>：基于<code>Vue</code>进行快速开发的完整系统，实现交互式的项目脚手架。</li>
+</ul>
+<p>2.使用<code>Vue CLI</code>创建前端工程：</p>
+<ul>
+<li>方式一：<code>vue create 项目名称</code></li>
+<li>方式二：<code>vue ui</code></li>
+</ul>
+<p>3.项目结构</p>
+<p><img src="/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/Vue%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png" srcset="/img/loading.gif" lazyload></p>
+<p>4.启动前端项目：<code>npm run serve</code>。</p>
+<p>5.前端项目启动后，服务端口默认为<code>8080</code>，很容易和后端<code>tomcat</code>端口号冲突。可以修改前端服务的端口号。</p>
+<p>在<code>vue.config.js</code>中配置前端服务端口号：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> &#123; defineConfig &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@vue/cli-service&#x27;</span>)<br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title function_">defineConfig</span>(&#123;<br>  <span class="hljs-attr">transpileDependencies</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">devServer</span>: &#123;<br>    <span class="hljs-attr">port</span>: <span class="hljs-number">7070</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="Vue基本使用方式"><a href="#Vue基本使用方式" class="headerlink" title="Vue基本使用方式"></a>Vue基本使用方式</h4><h5 id="Vue组件"><a href="#Vue组件" class="headerlink" title="Vue组件"></a>Vue组件</h5><p><code>Vue</code>的组件文件以<code>.vue</code>结尾，每个组件由三部分组成：</p>
+<ol>
+<li>结构<code>&lt;template&gt;</code>：只有一个根元素，由它生成<code>HTML</code>代码。</li>
+<li>样式<code>&lt;style&gt;</code>：编写<code>CSS</code>，控制页面展示效果，全局样式，影响所有组件，局部样式，只作用于当前组件。</li>
+<li>逻辑<code>&lt;script&gt;</code>：编写<code>JS</code>代码，控制模版的数据来源和行为。</li>
+</ol>
+<h5 id="文本插值"><a href="#文本插值" class="headerlink" title="文本插值"></a>文本插值</h5><p>作用：用来绑定<code>data</code>方法返回的对象属性。</p>
+<p>用法：<code>&#123;&#123;&#125;&#125;</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>    &lt;div&gt;<br>        &lt;h1&gt;&#123;&#123; name &#125;&#125;&lt;/h1&gt;<br>        &lt;h1&gt;&#123;&#123; age &gt; 60 ? &#x27;老年&#x27; : &#x27;青年&#x27; &#125;&#125;&lt;/h1&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>    export default &#123;<br>        data() &#123;<br>            return &#123; name: &#x27;张三&#x27;, age: 30 &#125;;<br>        &#125;<br>    &#125;;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定"></a>属性绑定</h5><p>作用：为标签的属性绑定<code>data</code>方法中返回的属性。</p>
+<p>用法：<code>v-bind:xxx</code>，简写为 <code>:xxx</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>    &lt;div&gt;<br>        &lt;div&gt;&lt;input type=&quot;text&quot; v-bind:value=&quot;name&quot;&gt;&lt;/div&gt;<br>        &lt;div&gt;&lt;input type=&quot;text&quot; :value=&quot;age&quot;&gt;&lt;/div&gt;<br>        &lt;div&gt;&lt;img :src=&quot;url&quot;/&gt;&lt;/div&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>export default &#123;<br>    data () &#123;<br>        return &#123;<br>            name: &#x27;王五&#x27;,<br>            age: 20,<br>            src: &#x27;https://www.itcast.cn/2018czgw/images/logo2.png&#x27;<br>        &#125;;<br>    &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h5><p>作用：为元素绑定对应的事件。</p>
+<p>用法：<code>v-on:xxx</code>，简写为<code>@xxx</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>    &lt;div&gt;<br>      &lt;div&gt;<br>        &lt;input type=&quot;button&quot; value=&quot;保存&quot; v-on:click=&quot;handleSave&quot;/&gt;<br>        &lt;input type=&quot;button&quot; value=&quot;保存&quot; @click=&quot;handleSave&quot;/&gt;&lt;br&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>  &lt;/template&gt;<br>&lt;script&gt;<br>export default &#123;<br>    data()&#123; return &#123; name: ‘张三’&#125;<br>    &#125;,<br>    methods: &#123;<br>        handleSave()&#123;<br>            alert(this.name)<br>        &#125;<br>    &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h5><p>作用：表单输入项和 data 方法中的属性进行绑定，任意一方改变都会同步给另一方。</p>
+<p>用法：<code>v-model</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>    &lt;div&gt;<br>        &lt;div&gt;<br>            双向绑定：&#123;&#123; name &#125;&#125;<br>            &lt;input type=&quot;text&quot; v-model=&quot;name&quot; /&gt;<br>            &lt;input type=&quot;button&quot; value=&quot;改变&quot; @click=&quot;handleChange&quot;/&gt;<br>        &lt;/div&gt;<br>    &lt;/div&gt;<br>  &lt;/template&gt;<br>&lt;script&gt;<br>export default &#123;<br>    data()&#123;return &#123;name: &#x27;张三&#x27;&#125;<br>    &#125;,<br>    methods: &#123;<br>        handleChange()&#123;<br>            this.name = &#x27;李四&#x27;<br>        &#125;<br>    &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h5><p>作用：根据表达式的值来动态渲染页面元素。</p>
+<p>用法：<code>v-if</code>、<code>v-else</code>、<code>v-else-if</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>    &lt;div&gt;<br>        &lt;div v-if=&quot;sex == 1&quot;&gt;<br>            男<br>        &lt;/div&gt;<br>        &lt;div v-else-if=&quot;sex == 2&quot;&gt;<br>            女<br>        &lt;/div&gt;<br>        &lt;div v-else&gt;<br>            未知<br>        &lt;/div&gt;<br>    &lt;/div&gt;<br>  &lt;/template&gt;<br>  <br>&lt;script&gt;<br>export default &#123;<br>    data()&#123;<br>        return &#123;sex: 1&#125;<br>    &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h5><p><code>Axios</code>是一个基于<code>promise</code>的网络请求库，作用于浏览器和<code>node.js</code>中。</p>
+<p>安装命令：<code>npm install axios</code>。</p>
+<p>导入命令：<code>import axios from &#39;axios&#39;</code>。</p>
+<p><code>axios</code>的<code>API</code>列表：</p>
+<p><img src="/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/axios%E7%9A%84API%E5%88%97%E8%A1%A8.png" srcset="/img/loading.gif" lazyload></p>
+<p>参数说明：</p>
+<ul>
+<li><code>url</code>：请求路径。</li>
+<li><code>data</code>：请求体数据，最常见的是<code>JSON</code>格式数据。</li>
+<li><code>config</code>：配置对象，可以设置查询参数、请求头信息。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;input type=&quot;button&quot; value=&quot;发送POST请求&quot; @click=&quot;handleSendPOST&quot; /&gt;<br>    &lt;input type=&quot;button&quot; value=&quot;发送GET请求&quot; @click=&quot;handleSendGET&quot; /&gt;<br>    &lt;input type=&quot;button&quot; value=&quot;统一请求方式&quot; @click=&quot;handleSend&quot; /&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>import axios from &#x27;axios&#x27;<br><br>export default &#123;<br>  methods: &#123;<br>    handleSendPOST()&#123;<br>      axios.post(&#x27;/api/admin/employee/login&#x27;, &#123;<br>        username: &#x27;admin&#x27;,<br>        password: &#x27;123456&#x27;<br>      &#125;).then(res =&gt; &#123;<br>        console.log(res.data)<br>      &#125;).catch(error =&gt; &#123;<br>        console.log(error.response)<br>      &#125;)<br>    &#125;,<br>      <br>    handleSendGET()&#123;<br>      axios.get(&#x27;api/admin/shop/status&#x27;, &#123;<br>        headers: &#123;<br>          token: &quot;eyJhbGciOiJIUzI1NiJ9.eyJlbXBJZCI6MSwiZXhwIjoxNzMwNzgxODY0fQ.F9E5ntRqyRP2sVa4-95ZjErIfuDEV6q4Oi3Btya17Qg&quot;<br>        &#125;<br>      &#125;).then(res =&gt; &#123;<br>        console.log(res.data)<br>      &#125;)<br>    &#125;,<br>      <br>    handleSend()&#123; //axios统一调用方式发送请求<br>      axios(&#123;<br>        url: &#x27;/api/admin/employee/login&#x27;,<br>        method: &#x27;post&#x27;,<br>        data: &#123;<br>          username: &#x27;admin&#x27;,<br>          password: &#x27;123456&#x27;<br>        &#125;<br>      &#125;).then(res =&gt; &#123;<br>        console.log(res.data.data.token)<br>        axios(&#123;<br>          url: &#x27;api/admin/shop/status&#x27;,<br>          method: &#x27;get&#x27;,<br>          headers: &#123;<br>            token: res.data.data.token<br>          &#125;<br>        &#125;)<br>      &#125;)<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h6 id="解决跨域问题"><a href="#解决跨域问题" class="headerlink" title="解决跨域问题"></a>解决跨域问题</h6><p>为了解决跨域问题，可以在<code>vue.config.js</code>文件中配置代理：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs JSON">const <span class="hljs-punctuation">&#123;</span> defineConfig <span class="hljs-punctuation">&#125;</span> = require(&#x27;@vue/cli-service&#x27;)<br>module.exports = defineConfig(<span class="hljs-punctuation">&#123;</span><br>  transpileDependencies<span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  devServer<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    port<span class="hljs-punctuation">:</span> <span class="hljs-number">7070</span><span class="hljs-punctuation">,</span><br>    proxy<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span> <span class="hljs-comment">//配置前端代理</span><br>      &#x27;/api&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span> <span class="hljs-comment">//前端请求路径前缀api</span><br>        target<span class="hljs-punctuation">:</span> &#x27;http<span class="hljs-punctuation">:</span><span class="hljs-comment">//localhost:8080&#x27;, //路径转发</span><br>        pathRewrite<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span> <span class="hljs-comment">//路径重写</span><br>          &#x27;^/api&#x27; <span class="hljs-punctuation">:</span> &#x27;&#x27;<br>        <span class="hljs-punctuation">&#125;</span><br>      <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="路由Vue-Router"><a href="#路由Vue-Router" class="headerlink" title="路由Vue-Router"></a>路由Vue-Router</h4><p><code>vue</code>属于<strong>单页面</strong>应用，所谓的路由，就是根据浏览器路径不同，用不同的视图组件替换这个页面内容。</p>
+<p><code>vue</code>实现路由：通过<code>vue-router</code>实现路由功能，需要安装<code>js</code>库（<code>npm install vue-router</code>）。</p>
+<h5 id="路由配置"><a href="#路由配置" class="headerlink" title="路由配置"></a>路由配置</h5><p>路由组成：</p>
+<p><code>VueRouter</code>：路由器，根据路由请求在路由视图中动态渲染对应的视图组件。</p>
+<p><code>&lt;router-link&gt;</code>：路由链接组件，浏览器会解析成<code>&lt;a&gt;</code>。</p>
+<p><code>&lt;router-view&gt;</code>：路由视图组件，用来展示与路由路径匹配的视图组件。</p>
+<p><img src="/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/Vue%E8%B7%AF%E7%94%B1%E7%BB%84%E6%88%90.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/%E8%B7%AF%E7%94%B1%E8%B7%AF%E5%BE%84%E5%92%8C%E8%A7%86%E5%9B%BE%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB.png" srcset="/img/loading.gif" lazyload></p>
+<h6 id="路由跳转"><a href="#路由跳转" class="headerlink" title="路由跳转"></a>路由跳转</h6><ul>
+<li><p>标签式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;router-link to=&quot;/&quot;&gt;Home&lt;/router-link&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>编程式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>  &lt;div id=&quot;app&quot;&gt;<br>    &lt;nav&gt;<br>      &lt;router-link to=&quot;/&quot;&gt;Home&lt;/router-link&gt; |<br>      &lt;router-link to=&quot;/about&quot;&gt;About&lt;/router-link&gt; |<br>      &lt;input type=&quot;button&quot; value=&quot;编程式路由跳转&quot; @click=&quot;jump&quot;/&gt;<br>    &lt;/nav&gt;<br>    &lt;!-- 视图组件展示的位置 --&gt;<br>    &lt;router-view/&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>export default&#123;<br>  methods: &#123;<br>    jump()&#123;<br>      //使用编程式路由跳转方式<br>      this.$router.push(&#x27;about&#x27;) //this.$router 是获取到路由对象，push方法是根据url进行跳转<br><br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="404页面"><a href="#404页面" class="headerlink" title="404页面"></a>404页面</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">//index.js</span><br><span class="hljs-comment">//维护路由表，某个路由路径对应哪个视图组件</span><br><span class="hljs-keyword">const</span> routes = [<br>  &#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/&#x27;</span>,<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;home&#x27;</span>,<br>    <span class="hljs-attr">component</span>: <span class="hljs-title class_">HomeView</span> <span class="hljs-comment">//静态导入</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/about&#x27;</span>,<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;about&#x27;</span>,<br>    <span class="hljs-comment">// route level code-splitting</span><br>    <span class="hljs-comment">// this generates a separate chunk (about.[hash].js) for this route</span><br>    <span class="hljs-comment">// which is lazy-loaded when the route is visited.</span><br>    <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-comment">/* webpackChunkName: &quot;about&quot; */</span> <span class="hljs-string">&#x27;../views/AboutView.vue&#x27;</span>) <span class="hljs-comment">//懒加载，动态导入</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/404&#x27;</span>,<br>    <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;../views/404View.vue&#x27;</span>)<br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;*&#x27;</span>, <span class="hljs-comment">//前面的都匹配不到，就会走到这</span><br>    <span class="hljs-attr">redirect</span>: <span class="hljs-string">&#x27;/404&#x27;</span> <span class="hljs-comment">//重定向到404</span><br>  &#125;<br>]<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;!-- 404View.vue --&gt;<br>&lt;template&gt;<br>&lt;div class=&quot;about&quot;&gt;<br>    &lt;h1&gt;您请求的资源不存在&lt;/h1&gt;<br>&lt;/div&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h5><p>嵌套路由：组件内要切换内容，就需要用到嵌套路由（子路由）。</p>
+<p>实现步骤：</p>
+<p>1.安装并导入<a target="_blank" rel="noopener" href="https://element.eleme.io/#/zh-CN/component/installation">elementui</a>：<code>npm i element-ui -S</code>，实现页面布局（<code>Container</code>布局容器）：<code>ContainerView.vue</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>    &lt;div&gt;<br>        &lt;el-container&gt;<br>            &lt;el-header&gt;Header&lt;/el-header&gt;<br>            &lt;el-container&gt;<br>                &lt;el-aside width=&quot;200px&quot;&gt;<br>                    &lt;router-link to=&quot;/c/p1&quot;&gt;P1&lt;/router-link&gt; &lt;br&gt;<br>                    &lt;router-link to=&quot;/c/p2&quot;&gt;P2&lt;/router-link&gt; &lt;br&gt;<br>                    &lt;router-link to=&quot;/c/p3&quot;&gt;P3&lt;/router-link&gt; &lt;br&gt;<br>                &lt;/el-aside&gt;<br>                &lt;el-main&gt;<br>                    &lt;router-view&gt;&lt;/router-view&gt;<br>                &lt;/el-main&gt;<br>            &lt;/el-container&gt;<br>        &lt;/el-container&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>export default &#123;<br><br>&#125;<br>&lt;/script&gt;<br><br>&lt;style&gt;<br>.el-header,<br>.el-footer &#123;<br>    background-color: #B3C0D1;<br>    color: #333;<br>    text-align: center;<br>    line-height: 60px;<br>&#125;<br><br>.el-aside &#123;<br>    background-color: #D3DCE6;<br>    color: #333;<br>    text-align: center;<br>    line-height: 200px;<br>&#125;<br><br>.el-main &#123;<br>    background-color: #E9EEF3;<br>    color: #333;<br>    text-align: center;<br>    line-height: 160px;<br>&#125;<br><br>body&gt;.el-container &#123;<br>    margin-bottom: 40px;<br>&#125;<br><br>.el-container:nth-child(5) .el-aside,<br>.el-container:nth-child(6) .el-aside &#123;<br>    line-height: 260px;<br>&#125;<br><br>.el-container:nth-child(7) .el-aside &#123;<br>    line-height: 320px;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<p>2.提供子视图组件，用于效果展示：<code>P1View.vue</code>、<code>P2View.vue</code>、<code>P3View.vue</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>    &lt;div&gt;<br>        P1View &lt;!-- 三个组件更换这部分内容即可 --&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<p>3.在<code>src/router/index.js</code>中配置路由映射规则（嵌套路由配置）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/c&#x27;</span>,<br>        <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;../views/container/ContainerView.vue&#x27;</span>),<br>            <span class="hljs-attr">redirect</span>: <span class="hljs-string">&#x27;/c/p1&#x27;</span>,<br>                <span class="hljs-comment">//嵌套路由（子路由），对应的组件会展示在当前组件内部</span><br>                <span class="hljs-attr">children</span>: [<br>                    &#123;<br>                        <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/c/p1&#x27;</span>,<br>                        <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;../views/container/P1View.vue&#x27;</span>)<br>                    &#125;,<br>                    &#123;<br>                        <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/c/p2&#x27;</span>,<br>                        <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;../views/container/P2View.vue&#x27;</span>)<br>                    &#125;,<br>                    &#123;<br>                        <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/c/p3&#x27;</span>,<br>                        <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;../views/container/P3View.vue&#x27;</span>)<br>                    &#125;<br>                ]<br>&#125;,<br></code></pre></td></tr></table></figure>
+
+<p>4.在布局容器视图中添加<code>&lt;router-view&gt;</code>，实现子视图组件展示。</p>
+<p>5.在布局容器视图中添加<code>&lt;router-link&gt;</code>，实现路由请求。</p>
+<p>注意：子路由变化，切换的是【<code>ContainerView</code>组件】中 <code>&lt;router-view&gt;&lt;/router-view&gt;</code> 部分的内容。</p>
+<h4 id="状态管理vuex"><a href="#状态管理vuex" class="headerlink" title="状态管理vuex"></a>状态管理vuex</h4><h5 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h5><p><code>vuex</code>是一个专为<code>Vue.js</code>应用程序开发的状态管理库。</p>
+<p><code>vuex</code>可以在多个组件之间共享数据，并且共享的数据是响应式的，即数据的变更能及时渲染到模板。</p>
+<p><code>vuex</code>采用集中式存储管理所有组件的状态。</p>
+<p>安装<code>vuex</code>：<code>npm install vuex@next --save</code>。（可以创建带有<code>vuex</code>功能的脚手架工程来使用<code>vuex</code>）</p>
+<p>核心概念：</p>
+<ol>
+<li><code>state</code>：状态对象，集中定义各个组件共享的数据。</li>
+<li><code>mutations</code>：类似于一个事件，用于修改共享数据，要求必须是同步函数。</li>
+<li><code>actions</code>：类似于<code>mutation</code>，可以包含异步操作，通过调用<code>mutation</code>来改变共享数据。</li>
+</ol>
+<h5 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h5><p>在<code>store</code>对象的<code>state</code>属性中定义共享数据。</p>
+<p>在<code>store</code>对象的<code>mutations</code>属性中定义修改共享数据的函数。</p>
+<p>在<code>store</code>对象的<code>actions</code>属性中定义调用<code>mutation</code>的函数，可以进行异步操作。</p>
+<p><code>mutations</code>中的函数不能直接调用，只能通过<code>store</code>对象的<code>commit</code>方法调用。</p>
+<p><code>actions</code>中定义的函数不能直接调用，只能通过<code>store</code>对象的<code>dispatch</code>方法调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">//index.js</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vuex</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex&#x27;</span><br><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;axios&#x27;</span><br><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">Vuex</span>) <span class="hljs-comment">//导入vuex，在次文件中统一管理共享数据</span><br><br><span class="hljs-comment">//集中管理多个组件共享的数据</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vuex</span>.<span class="hljs-title class_">Store</span>(&#123;<br>  <span class="hljs-attr">state</span>: &#123; <span class="hljs-comment">//集中定义共享数据</span><br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;未登录游客&#x27;</span><br>  &#125;,<br>  <span class="hljs-attr">getters</span>: &#123;&#125;,<br>  <span class="hljs-attr">mutations</span>: &#123; <span class="hljs-comment">//修改共享数据只能通过mutations实现，必须是同步操作</span><br>    <span class="hljs-title function_">setName</span>(<span class="hljs-params">state, newName</span>)&#123;<br>      state.<span class="hljs-property">name</span> = newName<br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">actions</span>: &#123; <span class="hljs-comment">//通过actions可以调用到mutations，在actions中可以进行异步操作</span><br>    <span class="hljs-title function_">setNameByAxios</span>(<span class="hljs-params">context</span>)&#123;<br>      <span class="hljs-title function_">axios</span>(&#123;<br>        <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/api/admin/employee/login&#x27;</span>,<br>        <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;post&#x27;</span>,<br>        <span class="hljs-attr">data</span>: &#123;<br>          <span class="hljs-attr">username</span>: <span class="hljs-string">&#x27;admin&#x27;</span>,<br>          <span class="hljs-attr">password</span>: <span class="hljs-string">&#x27;123456&#x27;</span><br>        &#125;<br>      &#125;).<span class="hljs-title function_">then</span>( <span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span>(res.<span class="hljs-property">data</span>.<span class="hljs-property">code</span> == <span class="hljs-number">1</span>)&#123;<br>          <span class="hljs-comment">//异步请求后，需要修改共享数据</span><br>          <span class="hljs-comment">//在actions中调用mutation中定义的setName函数</span><br>          context.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;setName&#x27;</span>, res.<span class="hljs-property">data</span>.<span class="hljs-property">data</span>.<span class="hljs-property">name</span>)<br>        &#125;<br>      &#125;)<br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">modules</span>: &#123;&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;!-- App.vue --&gt;<br>&lt;template&gt;<br>  &lt;div id=&quot;app&quot;&gt;<br>    欢迎你，&#123;&#123; $store.state.name &#125;&#125;<br>    &lt;input type=&quot;button&quot; value=&quot;通过mutations修改共享数据&quot; @click=&quot;handleUpdate&quot;/&gt;<br>    &lt;input type=&quot;button&quot; value=&quot;通过actions修改共享数据&quot; @click=&quot;handleCallAction&quot;/&gt;<br><br>    &lt;img alt=&quot;Vue logo&quot; src=&quot;./assets/logo.png&quot;&gt;<br>    &lt;HelloWorld msg=&quot;Welcome to Your Vue.js App&quot; /&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>import HelloWorld from &#x27;./components/HelloWorld.vue&#x27;<br><br>export default &#123;<br>  name: &#x27;App&#x27;,<br>  components: &#123;<br>    HelloWorld<br>  &#125;,<br>  methods: &#123;<br>    handleUpdate()&#123;<br>      //mutations中定义的函数不能直接调用，必须通过这种方式来调用<br>      //第一个参数为mutations中定义的函数名称，第二个参数为传递的参数<br>      this.$store.commit(&#x27;setName&#x27;, &#x27;李四&#x27;)<br>    &#125;,<br>    handleCallAction()&#123;<br>      //调用actions中定义的函数<br>      this.$store.dispatch(&#x27;setNameByAxios&#x27;)<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br><br>&lt;style&gt;<br>#app &#123;<br>  font-family: Avenir, Helvetica, Arial, sans-serif;<br>  -webkit-font-smoothing: antialiased;<br>  -moz-osx-font-smoothing: grayscale;<br>  text-align: center;<br>  color: #2c3e50;<br>  margin-top: 60px;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">//vue.config.js文件，配置代理</span><br><span class="hljs-keyword">const</span> &#123; defineConfig &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@vue/cli-service&#x27;</span>)<br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title function_">defineConfig</span>(&#123;<br>  <span class="hljs-attr">transpileDependencies</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">devServer</span>: &#123;<br>    <span class="hljs-attr">port</span>: <span class="hljs-number">7777</span>,<br>    <span class="hljs-attr">proxy</span>: &#123;<br>      <span class="hljs-string">&#x27;/api&#x27;</span> : &#123;<br>        <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;http://localhost:8080&#x27;</span>,<br>        <span class="hljs-attr">pathRewrite</span>: &#123;<br>        <span class="hljs-string">&#x27;^/api&#x27;</span> : <span class="hljs-string">&#x27;&#x27;</span><br>        &#125;<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h4><ul>
+<li><code>TypeScript</code>（简称：<code>TS</code>） 是微软推出的开源语言。</li>
+<li><code>TypeScript</code>是<code>JavaScript</code>的超集（<code>JS</code>有的<code>TS</code>都有）。</li>
+<li><code>TypeScript = Type + JavaScript</code>（在<code>JS</code>基础上增加了类型支持）。</li>
+<li><code>TypeScript</code>文件扩展名为<code>ts</code>。</li>
+<li><code>TypeScript</code>可编译成标准的<code>JavaScript</code>，并且在编译时进行类型检查。</li>
+</ul>
+<p><img src="/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript%E4%BB%A3%E7%A0%81%E7%BC%96%E8%AF%91.png" srcset="/img/loading.gif" lazyload></p>
+<p>在前端项目中使用<code>TypeScript</code>，需要进行安装，命令为：<code>npm install -g typescript</code>。</p>
+<p>查看<code>TypeScript</code>版本：<code>tsc -v</code>。</p>
+<h5 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h5><p>1.创建<code>hello.ts</code>文件。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//定义一个函数 hello，并且指定参数类型为string</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">hello</span>(<span class="hljs-params"><span class="hljs-attr">msg</span>:<span class="hljs-built_in">string</span></span>) &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(msg)<br>&#125;<br><br><span class="hljs-comment">//调用上面的函数，传递非string类型的参数</span><br><span class="hljs-title function_">hello</span>(<span class="hljs-number">123</span>)<br></code></pre></td></tr></table></figure>
+
+<p>2.使用<code>tsc</code>命令编译<code>hello.ts</code>文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">PS E:\2_learn\Java-waimai\code\vue_project\ts-demo&gt; tsc .\hello.ts<br>hello.ts:7:7 - error TS2345: Argument of type &#x27;number&#x27; is not assignable to parameter of type &#x27;string&#x27;.<br><br>7 hello(123)<br>        ~~~<br><br><br>Found 1 error in hello.ts:7<br></code></pre></td></tr></table></figure>
+
+<p>可以看到编译报错，提示参数类型不匹配。这说明在编译时<code>TS</code>会进行类型检查。需要注意的是在编译为<code>JS</code>文件后，类型会被擦除。</p>
+<p>编译后：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">//定义一个函数 hello，并且指定参数类型为string</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">hello</span>(<span class="hljs-params">msg</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(msg);<br>&#125;<br><span class="hljs-comment">//调用上面的函数，传递非string类型的参数</span><br><span class="hljs-title function_">hello</span>(<span class="hljs-string">&quot;hi&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+
+
+<p><code>TypeScript</code>和<code>JavaScript</code>的区别：</p>
+<ul>
+<li><code>TS</code>属于静态类型编程语言，<code>JS</code>属于动态类型编程语言。</li>
+<li>静态类型在编译期做类型检查，动态类型在执行期做类型检查。</li>
+<li>对于<code>JS</code>来说，需要等到代码执行的时候才能发现错误（晚）。</li>
+<li>对于<code>TS</code>来说，在代码编译的时候就可以发现错误（早）。</li>
+<li>配合<code>VSCode</code>开发工具，<code>TS</code>可以提前到在编写代码的同时就发现代码中的错误，减少找<code>Bug</code>、改<code>Bug</code>的时间。</li>
+</ul>
+<h5 id="TypeScript-常用类型"><a href="#TypeScript-常用类型" class="headerlink" title="TypeScript 常用类型"></a>TypeScript 常用类型</h5><table>
+<thead>
+<tr>
+<th><strong>类型</strong></th>
+<th><strong>例</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字符串类型</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>数字类型</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>布尔类型</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>数组类型</td>
+<td>number[],string[],  boolean[] 依此类推</td>
+<td></td>
+</tr>
+<tr>
+<td>任意类型</td>
+<td>any</td>
+<td>相当于又回到了没有类型的时代</td>
+</tr>
+<tr>
+<td>复杂类型</td>
+<td>type 与 interface</td>
+<td></td>
+</tr>
+<tr>
+<td>函数类型</td>
+<td>() &#x3D;&gt;  void</td>
+<td>对函数的参数和返回值进行说明</td>
+</tr>
+<tr>
+<td>字面量类型</td>
+<td>“a”|”b”|”c”</td>
+<td>限制变量或参数的取值</td>
+</tr>
+<tr>
+<td>class 类</td>
+<td>class Animal</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>基于<code>TS</code>进行前端开发时，类型标注的位置有如下3个：标注变量、标注参数、标注返回值。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//标注变量，指定变量msg的类型为string</span><br><span class="hljs-keyword">let</span> <span class="hljs-attr">msg</span>:<span class="hljs-built_in">string</span>=<span class="hljs-string">&#x27;hello ts !&#x27;</span><br><span class="hljs-comment">//标注参数和返回值，指定m2函数的参数类型为string，并且返回值也为string</span><br><span class="hljs-keyword">const</span> m2 = (name : <span class="hljs-built_in">string</span>) : <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> name.<span class="hljs-title function_">toLowerCase</span>() + msg<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h6 id="字符串、数字、布尔类型"><a href="#字符串、数字、布尔类型" class="headerlink" title="字符串、数字、布尔类型"></a>字符串、数字、布尔类型</h6><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//字符串类型</span><br><span class="hljs-keyword">let</span> <span class="hljs-attr">username</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;itcast&#x27;</span><br><br><span class="hljs-comment">//数字类型</span><br><span class="hljs-keyword">let</span> <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">20</span><br><br><span class="hljs-comment">//布尔类型</span><br><span class="hljs-keyword">let</span> <span class="hljs-attr">isTrue</span>: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">true</span><br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(username)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(isTrue)<br></code></pre></td></tr></table></figure>
+
+
+
+<h6 id="字面量类型"><a href="#字面量类型" class="headerlink" title="字面量类型"></a>字面量类型</h6><p>字面量类型用于限定数据的取值范围，类似于<code>java</code>中的枚举。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//字面量类型</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">printText</span>(<span class="hljs-params"><span class="hljs-attr">s</span>: <span class="hljs-built_in">string</span>, <span class="hljs-attr">alignment</span>: <span class="hljs-string">&#x27;left&#x27;</span>|<span class="hljs-string">&#x27;right&#x27;</span>|<span class="hljs-string">&#x27;center&#x27;</span></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(s,alignment)<br>&#125;<br><br><span class="hljs-title function_">printText</span>(<span class="hljs-string">&#x27;hello&#x27;</span>,<span class="hljs-string">&#x27;left&#x27;</span>)<br><span class="hljs-comment">//printText(&#x27;hello&#x27;,&#x27;aaa&#x27;)</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h6 id="interface类型"><a href="#interface类型" class="headerlink" title="interface类型"></a>interface类型</h6><p><code>interface</code>类型是<code>TS</code>中的复杂类型，它让<code>TypeScript</code>具备了<code>JavaScript</code>所缺少的、描述较为复杂数据结构的能力。</p>
+<p>可以通过在属性名后面加上<code>?</code>，表示当前属性为可选。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//定义接口</span><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Cat</span> &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>,<br>    age?: <span class="hljs-built_in">number</span> <span class="hljs-comment">//当前属性为可选</span><br>&#125;<br><br><span class="hljs-comment">//定义变量，并且指定为Cat类型</span><br><span class="hljs-keyword">const</span> <span class="hljs-attr">c1</span>: <span class="hljs-title class_">Cat</span> = &#123;<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;小白&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">1</span>&#125;<br><span class="hljs-keyword">const</span> <span class="hljs-attr">c2</span>: <span class="hljs-title class_">Cat</span> = &#123;<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;小白&#x27;</span>&#125; <span class="hljs-comment">//正确， age属性为可选</span><br><span class="hljs-comment">//const c3: Cat = &#123;name: &#x27;小白&#x27;, age: 1, sex: &#x27;&#x27;&#125; //错误，多出sex属性</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h6 id="class-类型"><a href="#class-类型" class="headerlink" title="class 类型"></a>class 类型</h6><p>使用<code>class</code>关键字来定义类，类中可以包含属性、构造方法、普通方法等。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//定义一个类，使用class关键字</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>; <span class="hljs-comment">//指定类中的属性</span><br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span></span>)&#123; <span class="hljs-comment">//构造方法</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name<br>    &#125;<br><br>    <span class="hljs-comment">//方法</span><br>    <span class="hljs-title function_">study</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> + <span class="hljs-string">&#x27;正在学习&#x27;</span>)<br>    &#125;<br>&#125;<br><span class="hljs-comment">//使用User类型</span><br><span class="hljs-keyword">const</span> user = <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(<span class="hljs-string">&#x27;张三&#x27;</span>)<br><span class="hljs-comment">//输出类中的属性</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(user.<span class="hljs-property">name</span>)<br><span class="hljs-comment">//调用类中的方法</span><br>user.<span class="hljs-title function_">study</span>()<br></code></pre></td></tr></table></figure>
+
+<p>在定义类时，可以使用<code>implments</code>关键字实现接口。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//定义接口</span><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Animal</span> &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>    <span class="hljs-title function_">eat</span>(): <span class="hljs-built_in">void</span><br>&#125;<br><br><span class="hljs-comment">//定义一个类，实现上面的接口</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Bird</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Animal</span> &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span></span>)&#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name<br>    &#125;<br><br>    <span class="hljs-title function_">eat</span>(): <span class="hljs-built_in">void</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> + <span class="hljs-string">&#x27;eat&#x27;</span>)<br>    &#125;<br>&#125;<br><span class="hljs-comment">//创建类型为Bird的对象</span><br><span class="hljs-keyword">const</span> b1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Bird</span>(<span class="hljs-string">&#x27;燕子&#x27;</span>)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(b1.<span class="hljs-property">name</span>)<br>b1.<span class="hljs-title function_">eat</span>()<br></code></pre></td></tr></table></figure>
+
+<p>在定义类时，可以使用<code>extends</code>关键字 继承其他类。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//定义一个类，继承上面的类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Parrot</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Bird</span> &#123;<br>    <span class="hljs-title function_">say</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> + <span class="hljs-string">&#x27; say hello&#x27;</span>)<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> myParrot = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Parrot</span>(<span class="hljs-string">&#x27;Polly&#x27;</span>)<br><br>myParrot.<span class="hljs-title function_">eat</span>()<br>myParrot.<span class="hljs-title function_">say</span>()<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(myParrot.<span class="hljs-property">name</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="前端环境搭建"><a href="#前端环境搭建" class="headerlink" title="前端环境搭建"></a>前端环境搭建</h3><h4 id="代码导入"><a href="#代码导入" class="headerlink" title="代码导入"></a>代码导入</h4><p>直接导入课程资料中提供的前端工程，在此基础上开发即可。</p>
+<p>使用的<code>node</code>版本为<code>12.22.0</code>可以成功<code>npm install</code>所需的包。</p>
+<h4 id="前端代码结构"><a href="#前端代码结构" class="headerlink" title="前端代码结构"></a>前端代码结构</h4><p><img src="/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><code>api</code>：存放封装了<code>Ajax</code>请求文件的目录。</li>
+<li><code>components</code>：公共组件存放目录。</li>
+<li><code>views</code>：存放视图组件的目录。</li>
+<li><code>App.vue</code>：项目的主组件，页面的入口文件。</li>
+<li><code>main.ts</code>：整个项目的入口文件。</li>
+<li><code>router.ts</code>：路由文件。</li>
+</ul>
+<h3 id="员工管理"><a href="#员工管理" class="headerlink" title="员工管理"></a>员工管理</h3><h4 id="员工分页查询"><a href="#员工分页查询" class="headerlink" title="员工分页查询"></a>员工分页查询</h4><p>1.从路由文件<code>router.ts</code>中找到员工管理页面（组件）。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript">&#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&quot;employee&quot;</span>,<br>        <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;@/views/employee/index.vue&quot;</span>),<br>            <span class="hljs-attr">meta</span>: &#123;<br>                <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;员工管理&quot;</span>,<br>                    <span class="hljs-attr">icon</span>: <span class="hljs-string">&quot;icon-employee&quot;</span><br>            &#125;<br>&#125;,<br></code></pre></td></tr></table></figure>
+
+<p>2.制作页面头部效果，为<code>查询</code>按钮绑定事件，发送<code>Ajax</code>请求获取分页数据。</p>
+<p>输入框和按钮都是使用<code>ElementUI</code>提供的组件。</p>
+<p>对于前端的组件只需要参考<code>ElementUI</code>提供的文档，进行修改即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;div class=&quot;tableBar&quot;&gt;<br>    &lt;label style=&quot;margin-right: 5px;&quot;&gt;<br>        员工姓名：<br>    &lt;/label&gt;<br>    &lt;el-input placeholder=&quot;请输入员工姓名&quot; style=&quot;width: 15%;&quot;  v-model=&quot;name&quot; /&gt;<br>    &lt;el-button type=&quot;primary&quot; style=&quot;margin-left: 25px;&quot; @click=&quot;pageQuery()&quot;&gt;查询&lt;/el-button&gt;<br>    &lt;el-button type=&quot;primary&quot; style=&quot;float: right;&quot;&gt;+添加员工&lt;/el-button&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
+
+<p>3.在<code>src/api/employee.ts</code>中定义方法，发送<code>Ajax</code>请求获取分页数据。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 分页查询员工</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">getEmployeeList</span> = (<span class="hljs-params"><span class="hljs-attr">params</span>: <span class="hljs-built_in">any</span></span>) =&gt;<br><span class="hljs-title function_">request</span>(&#123;<br>    <span class="hljs-string">&#x27;url&#x27;</span>: <span class="hljs-string">`/employee/page`</span>,<br>    <span class="hljs-string">&#x27;method&#x27;</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,<br>    <span class="hljs-string">&#x27;params&#x27;</span>: params<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>3.（1）定义<code>pageQuery</code>方法，发送<code>Ajax</code>请求获取分页数据。</p>
+<p>先验证当前<code>pageQuery</code>方法能否正常执行。按照规范，真正发送<code>Ajax</code>请求的代码需要封装到<code>api</code>目录下的<code>ts</code>文件中（<code>src/api/employee.ts</code>）。<code>pageQuery</code>方法中调用<code>getEmployeeList</code>方法。</p>
+<p>（2）在员工管理组件中导入<code>employee.ts</code>中定义的方法，并在<code>data() </code>方法中定义分页相关的模型数据。</p>
+<p>注意：需要将<code>name</code>属性和上面的输入框进行双向绑定。</p>
+<p>（3）提供<code>vue</code>的初始化方法<code>created()</code>，在页面加载后就查询分页数据。</p>
+<p>（4）使用<code>ElementUI</code>提供的表格组件展示分页数据。</p>
+<p>（5）动态展示启用、禁用按钮：</p>
+<ul>
+<li>如果当前员工的状态为启用，则展示为【禁用】按钮。</li>
+<li>如果当前员工的状态为禁用，则展示为【启用】按钮。</li>
+</ul>
+<p>（6）使用<code>ElementUI</code>提供的分页条组件，并绑定事件处理函数。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript">&lt;script lang=<span class="hljs-string">&quot;ts&quot;</span>&gt;<br><span class="hljs-keyword">import</span> &#123; getEmployeeList &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/api/employee&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-comment">//员工姓名，对应上面的输入框</span><br>      <span class="hljs-attr">page</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//页码</span><br>      <span class="hljs-attr">pageSize</span>: <span class="hljs-number">10</span>, <span class="hljs-comment">//每页记录数</span><br>      <span class="hljs-attr">total</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">//总记录数</span><br>      <span class="hljs-attr">records</span>: [] <span class="hljs-comment">//当前页要展示的数据集合</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-title function_">created</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">pageQuery</span>() <span class="hljs-comment">//当页面加载的时候发送一次分页请求</span><br>  &#125;,<br>  <span class="hljs-attr">methods</span>: &#123;<br>    <span class="hljs-comment">//分页查询</span><br>    <span class="hljs-title function_">pageQuery</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">const</span> params = &#123; <span class="hljs-attr">name</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span>, <span class="hljs-attr">page</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">page</span>, <span class="hljs-attr">pageSize</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">pageSize</span> &#125;<br>      <span class="hljs-comment">//发送Ajax请求，访问后端服务，获取分页数据</span><br>      <span class="hljs-title function_">getEmployeeList</span>(params).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (res.<span class="hljs-property">data</span>.<span class="hljs-property">code</span> == <span class="hljs-number">1</span>) &#123;<br>          <span class="hljs-variable language_">this</span>.<span class="hljs-property">total</span> = res.<span class="hljs-property">data</span>.<span class="hljs-property">data</span>.<span class="hljs-property">total</span><br>          <span class="hljs-variable language_">this</span>.<span class="hljs-property">records</span> = res.<span class="hljs-property">data</span>.<span class="hljs-property">data</span>.<span class="hljs-property">records</span><br>        &#125;<br>      &#125;).<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;请求出错了：&quot;</span> + err.<span class="hljs-property">message</span>)<br>      &#125;)<br>    &#125;,<br><br>    <span class="hljs-comment">//pageSize发生变化时触发</span><br>    <span class="hljs-title function_">handleSizeChange</span>(<span class="hljs-params">pageSize</span>)&#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">pageSize</span> = pageSize<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">pageQuery</span>()<br>    &#125;,<br>    <span class="hljs-comment">//page发生变化时出发</span><br>    <span class="hljs-title function_">handleCurrentChange</span>(<span class="hljs-params">page</span>)&#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">page</span> = page<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">pageQuery</span>()<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="启用禁用员工账号"><a href="#启用禁用员工账号" class="headerlink" title="启用禁用员工账号"></a>启用禁用员工账号</h4><p>1.为启用、禁用按钮绑定单击事件<code>handleStartOrStop</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;el-table-column label=&quot;操作&quot;&gt;<br>    &lt;template slot-scope=&quot;scope&quot;&gt;<br>        &lt;!-- type=&quot;text&quot;表示看起来像文字，但本质是一个按钮 --&gt;<br>        &lt;el-button type=&quot;text&quot;&gt;修改&lt;/el-button&gt;<br>        &lt;el-button type=&quot;text&quot; @click=&quot;handleStartOrStop(scope.row)&quot;&gt;&#123;&#123; scope.row.status === 1 ? &#x27;禁用&#x27; : &#x27;启用&#x27;<br>            &#125;&#125;&lt;/el-button&gt;<br>    &lt;/template&gt;<br>&lt;/el-table-column&gt;<br></code></pre></td></tr></table></figure>
+
+<p>2.编写handleStartOrStop&#96;方法。</p>
+<p>注意：如果是管理员账号则不允许更改账号状态。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//启用禁用员工账号</span><br><span class="hljs-title function_">handleStartOrStop</span>(<span class="hljs-params">row</span>) &#123;<br>    <span class="hljs-comment">//alert(`id=$&#123;row.id&#125;, status=$&#123;row.status&#125;`)</span><br>    <span class="hljs-keyword">if</span> (row.<span class="hljs-property">username</span> === <span class="hljs-string">&#x27;admin&#x27;</span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&#x27;admin为系统的管理员账号，不能更改账号状态！&#x27;</span>)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    <span class="hljs-comment">//弹出确认提示框</span><br>    <span class="hljs-variable language_">this</span>.$confirm(<span class="hljs-string">&#x27;确认要修改当前员工账号的状态吗?&#x27;</span>, <span class="hljs-string">&#x27;提示&#x27;</span>, &#123;<br>        <span class="hljs-attr">confirmButtonText</span>: <span class="hljs-string">&#x27;确定&#x27;</span>,<br>        <span class="hljs-attr">cancelButtonText</span>: <span class="hljs-string">&#x27;取消&#x27;</span>,<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;warning&#x27;</span><br>    &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-keyword">const</span> p = &#123;<br>            <span class="hljs-attr">id</span>: row.<span class="hljs-property">id</span>,<br>            <span class="hljs-attr">status</span>: !row.<span class="hljs-property">status</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span><br>        &#125;<br>        <span class="hljs-title function_">enableOrDisableEmployee</span>(p).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (res.<span class="hljs-property">data</span>.<span class="hljs-property">code</span> == <span class="hljs-number">1</span>) &#123;<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">success</span>(<span class="hljs-string">&#x27;员工的账号状态修改成功&#x27;</span>)<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">pageQuery</span>()<br>            &#125;<br>        &#125;)<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>3.在<code>employee.ts</code>中封装启用禁用员工账号方法，发送<code>Ajax</code>请求。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 启用禁用员工账号</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">enableOrDisableEmployee</span> = (<span class="hljs-params"><span class="hljs-attr">params</span>: <span class="hljs-built_in">any</span></span>) =&gt;<br><span class="hljs-title function_">request</span>(&#123;<br>    <span class="hljs-string">&#x27;url&#x27;</span>: <span class="hljs-string">`/employee/status/<span class="hljs-subst">$&#123;params.status&#125;</span>`</span>,<br>    <span class="hljs-string">&#x27;method&#x27;</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,<br>    <span class="hljs-string">&#x27;params&#x27;</span>: &#123;<span class="hljs-attr">id</span>: params.<span class="hljs-property">id</span>&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h4 id="新增员工"><a href="#新增员工" class="headerlink" title="新增员工"></a>新增员工</h4><p>添加员工操作步骤：</p>
+<ol>
+<li>点击“添加员工”按钮，跳转到新增页面。</li>
+<li>在新增员工页面录入员工相关信息。</li>
+<li>点击“保存”按钮完成新增操作。</li>
+</ol>
+<p>1.为 “添加员工”按钮绑定单击事件。（<code>index.vue</code>）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;el-button type=&quot;primary&quot; style=&quot;float: right;&quot; @click=&quot;handleAddEmp()&quot;&gt;+添加员工&lt;/el-button&gt;<br></code></pre></td></tr></table></figure>
+
+<p>2.提供<code>handleAddEmp</code>方法，进行路由跳转。（<code>index.vue</code>）</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//跳转到新增员工页面（组件）</span><br><span class="hljs-title function_">handleAddEmp</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">//路由跳转，跳转到新增员工组件</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;/employee/add&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意：在路由文件中已经配置了如下路由规则。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript">&#123;<br>    <span class="hljs-attr">path</span>: <span class="hljs-string">&quot;/employee/add&quot;</span>,<br>        <span class="hljs-attr">component</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;@/views/employee/addEmployee.vue&quot;</span>),<br>            <span class="hljs-attr">meta</span>: &#123;<br>                <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;添加/修改员工&quot;</span>,<br>                    <span class="hljs-attr">hidden</span>: <span class="hljs-literal">true</span><br>            &#125;<br>&#125;,<br></code></pre></td></tr></table></figure>
+
+<p>3.根据产品原型，开发页面元素。（<code>addEmployee.vue</code>）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>  &lt;div class=&quot;addBrand-container&quot;&gt;<br>    &lt;div class=&quot;container&quot;&gt;<br>      &lt;el-form :model=&quot;ruleForm&quot; :rules=&quot;rules&quot; ref=&quot;ruleForm&quot; label-width=&quot;180px&quot;&gt;<br>        &lt;el-form-item label=&quot;账号&quot; prop=&quot;username&quot;&gt;<br>          &lt;el-input v-model=&quot;ruleForm.username&quot;&gt;&lt;/el-input&gt;<br>        &lt;/el-form-item&gt;<br>        &lt;el-form-item label=&quot;员工姓名&quot; prop=&quot;name&quot;&gt;<br>          &lt;el-input v-model=&quot;ruleForm.name&quot;&gt;&lt;/el-input&gt;<br>        &lt;/el-form-item&gt;<br>        &lt;el-form-item label=&quot;手机号&quot; prop=&quot;phone&quot;&gt;<br>          &lt;el-input v-model=&quot;ruleForm.phone&quot;&gt;&lt;/el-input&gt;<br>        &lt;/el-form-item&gt;<br>        &lt;el-form-item label=&quot;性别&quot; prop=&quot;sex&quot;&gt;<br>          &lt;el-radio v-model=&quot;ruleForm.sex&quot; label=&quot;1&quot;&gt;男&lt;/el-radio&gt;<br>          &lt;el-radio v-model=&quot;ruleForm.sex&quot; label=&quot;2&quot;&gt;女&lt;/el-radio&gt;<br>        &lt;/el-form-item&gt;<br>        &lt;el-form-item label=&quot;身份证号&quot; prop=&quot;idNumber&quot;&gt;<br>          &lt;el-input v-model=&quot;ruleForm.idNumber&quot;&gt;&lt;/el-input&gt;<br>        &lt;/el-form-item&gt;<br>        &lt;div class=&quot;subBox&quot;&gt;<br>          &lt;!-- submitForm中第一个参数对ruleForm再次校验；第二个参数，false：保存后跳转分页查询页面，true：保存后留在当前页面继续添加 --&gt;<br>          &lt;el-button type=&quot;primary&quot; @click=&quot;submitForm(&#x27;ruleForm&#x27;, false)&quot;&gt;保存&lt;/el-button&gt;<br>          &lt;!-- 通过this.optType区分新增和修改页面，add为新增，update为修改 --&gt;<br>          &lt;el-button v-if=&quot;this.optType === &#x27;add&#x27;&quot; type=&quot;primary&quot; @click=&quot;submitForm(&#x27;ruleForm&#x27;, true)&quot;&gt;保存并继续添加员工<br>          &lt;/el-button&gt;<br>          &lt;el-button @click=&quot;() =&gt; this.$router.push(&#x27;/employee&#x27;)&quot;&gt;返回&lt;/el-button&gt;<br>        &lt;/div&gt;<br>      &lt;/el-form&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot; scoped&gt;<br>.addBrand &#123;<br>  &amp;-container &#123;<br>    margin: 30px;<br>    margin-top: 30px;<br><br>    .HeadLable &#123;<br>      background-color: transparent;<br>      margin-bottom: 0px;<br>      padding-left: 0px;<br>    &#125;<br><br>    .container &#123;<br>      position: relative;<br>      z-index: 1;<br>      background: #fff;<br>      padding: 30px;<br>      border-radius: 4px;<br><br>      // min-height: 500px;<br>      .subBox &#123;<br>        padding-top: 30px;<br>        text-align: center;<br>        border-top: solid 1px $gray-5;<br>      &#125;<br>    &#125;<br><br>    .idNumber &#123;<br>      margin-bottom: 39px;<br>    &#125;<br><br>    .el-form-item &#123;<br>      margin-bottom: 29px;<br>    &#125;<br><br>    .el-input &#123;<br>      width: 293px;<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<p>4.在<code>employee.ts</code>中封装新增员工方法，发送<code>Ajax</code>请求。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 新增员工</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">addEmployee</span> = (<span class="hljs-params"><span class="hljs-attr">params</span>: <span class="hljs-built_in">any</span></span>) =&gt;<br><span class="hljs-title function_">request</span>(&#123;<br>    <span class="hljs-string">&#x27;url&#x27;</span>: <span class="hljs-string">`/employee`</span>,<br>    <span class="hljs-string">&#x27;method&#x27;</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,<br>    <span class="hljs-string">&#x27;data&#x27;</span>: params <span class="hljs-comment">//请求体传参</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>5.定义模型数据和表单校验规则。在<code>methods</code>中定义提交表单的方法。（<code>addEmployee.vue</code>）</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript">&lt;script lang=<span class="hljs-string">&quot;ts&quot;</span>&gt;<br><span class="hljs-keyword">import</span> &#123; addEmployee &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/api/employee&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">optType</span>: <span class="hljs-string">&#x27;add&#x27;</span>,<br>      <span class="hljs-attr">ruleForm</span>: &#123;<br>        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>        <span class="hljs-attr">username</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>        <span class="hljs-attr">sex</span>: <span class="hljs-string">&#x27;1&#x27;</span>,<br>        <span class="hljs-attr">phone</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>        <span class="hljs-attr">idNumber</span>: <span class="hljs-string">&#x27;&#x27;</span><br>      &#125;,<br>      <span class="hljs-attr">rules</span>: &#123; <span class="hljs-comment">//校验规则</span><br>        <span class="hljs-attr">name</span>: [<br>          &#123; <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;请输入员工姓名&#x27;</span>, <span class="hljs-attr">trigger</span>: <span class="hljs-string">&#x27;blur&#x27;</span> &#125; <span class="hljs-comment">//失去焦点时，如果不输入该值，会报message中的错误</span><br>        ],<br>        <span class="hljs-attr">username</span>: [<br>          &#123; <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;请输入员工账号&#x27;</span>, <span class="hljs-attr">trigger</span>: <span class="hljs-string">&#x27;blur&#x27;</span> &#125;<br>        ],<br>        <span class="hljs-attr">phone</span>: [ <span class="hljs-comment">//validator是校验器，rule：规则，value：当前用户输入，callback：回调</span><br>          &#123;<br>            <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">trigger</span>: <span class="hljs-string">&#x27;blur&#x27;</span>, <span class="hljs-attr">validator</span>: <span class="hljs-function">(<span class="hljs-params">rule, value, callback</span>) =&gt;</span> &#123;<br>              <span class="hljs-keyword">if</span> (value === <span class="hljs-string">&#x27;&#x27;</span> || (! <span class="hljs-regexp">/^1(3|4|5|6|7|8|9)\d&#123;9&#125;$/</span>.<span class="hljs-title function_">test</span>(value))) &#123;<br>                <span class="hljs-title function_">callback</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;请输入正确的手机号！&#x27;</span>))<br>              &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-title function_">callback</span>()<br>              &#125;<br>            &#125;<br>          &#125;<br>        ],<br>        <span class="hljs-attr">idNumber</span>: [ <span class="hljs-comment">//validator是校验器，rule：规则，value：当前用户输入，callback：回调</span><br>          &#123;<br>            <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">trigger</span>: <span class="hljs-string">&#x27;blur&#x27;</span>, <span class="hljs-attr">validator</span>: <span class="hljs-function">(<span class="hljs-params">rule, value, callback</span>) =&gt;</span> &#123;<br>              <span class="hljs-keyword">if</span> (value === <span class="hljs-string">&#x27;&#x27;</span> || (! <span class="hljs-regexp">/(^\d&#123;15&#125;$)|(^\d&#123;18&#125;$)|^\d&#123;17&#125;(X|x)$/</span>.<span class="hljs-title function_">test</span>(value))) &#123;<br>                <span class="hljs-title function_">callback</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;请输入正确的身份证号！&#x27;</span>))<br>              &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-title function_">callback</span>()<br>              &#125;<br>            &#125;<br>          &#125;<br>        ]<br>      &#125;<br>    &#125;<br>  &#125;,<br>  <span class="hljs-attr">methods</span>: &#123;<br>    <span class="hljs-title function_">submitForm</span>(<span class="hljs-params">fromName, isContinue</span>) &#123;<br>      <span class="hljs-comment">//进行表单校验</span><br>      <span class="hljs-comment">//因为ref=&quot;ruleForm&quot;，所以通过$refs得到表单对象</span><br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>[fromName].<span class="hljs-title function_">validate</span>(<span class="hljs-function">(<span class="hljs-params">valid</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (valid) &#123;<br>          <span class="hljs-comment">//表单校验通过</span><br>          <span class="hljs-title function_">addEmployee</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ruleForm</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (res.<span class="hljs-property">data</span>.<span class="hljs-property">code</span> === <span class="hljs-number">1</span>) &#123;<br>              <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">success</span>(<span class="hljs-string">&#x27;员工添加成功！&#x27;</span>)<br><br>              <span class="hljs-keyword">if</span> (isContinue) &#123;<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">ruleForm</span> = &#123;<br>                  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>                  <span class="hljs-attr">username</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>                  <span class="hljs-attr">sex</span>: <span class="hljs-string">&#x27;1&#x27;</span>,<br>                  <span class="hljs-attr">phone</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>                  <span class="hljs-attr">idNumber</span>: <span class="hljs-string">&#x27;&#x27;</span><br>                &#125;<br>              &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;/employee&#x27;</span>)<br>              &#125;<br><br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>              <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">error</span>(res.<span class="hljs-property">data</span>.<span class="hljs-property">message</span>)<br>            &#125;<br>          &#125;)<br>        &#125;<br>      &#125;)<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="修改员工"><a href="#修改员工" class="headerlink" title="修改员工"></a>修改员工</h4><p>修改员工操作步骤：</p>
+<ol>
+<li>点击 “修改”按钮，跳转到修改页面。</li>
+<li>在修改员工页面录入员工相关信息。</li>
+<li>点击“保存”按钮完成修改操作。</li>
+</ol>
+<p>注意：</p>
+<p>由于添加员工和修改员工的表单项非常类似，所以添加和修改操作可以共用同一个页面（<code>addEmployee.vue</code>）。</p>
+<p>修改员工涉及到原始数据回显，所以需要传递员工<code>id</code>作为参数。</p>
+<p>1.在员工管理页面<code>index.vue</code>中，为“修改”按钮绑定单击事件，用于跳转到修改页面。（<code>index.vue</code>）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;el-button type=&quot;text&quot; @click=&quot;handleUpdateEmp(scope.row)&quot;&gt;修改&lt;/el-button&gt;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">//跳转到修改员工页面（组件）</span><br><span class="hljs-title function_">handleUpdateEmp</span>(<span class="hljs-params">row</span>)&#123;<br>    <span class="hljs-keyword">if</span>(row.<span class="hljs-property">username</span> === <span class="hljs-string">&#x27;admin&#x27;</span>)&#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;admin为系统的管理员账号，不能修改！&quot;</span>)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br><br>    <span class="hljs-comment">//跳转到修改页面，通过地址栏传递参数</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">push</span>(&#123;<br>        <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/employee/add&#x27;</span>,<br>        <span class="hljs-attr">query</span>: &#123;<span class="hljs-attr">id</span>: row.<span class="hljs-property">id</span>&#125; <span class="hljs-comment">//与增加组件的区别，传递了id参数</span><br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>2.由于<code>addEmployee.vue</code>为新增和修改共用页面，需要能够区分当前操作：</p>
+<p>如果路由中传递了<code>id</code>参数，则当前操作为修改。</p>
+<p>如果路由中没有传递<code>id</code>参数，则当前操作为新增。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;div class=&quot;subBox&quot;&gt;<br>    &lt;!-- submitForm中第一个参数对ruleForm再次校验；第二个参数，false：保存后跳转分页查询页面，true：保存后留在当前页面继续添加 --&gt;<br>    &lt;el-button type=&quot;primary&quot; @click=&quot;submitForm(&#x27;ruleForm&#x27;, false)&quot;&gt;保存&lt;/el-button&gt;<br>    &lt;!-- 通过this.optType区分新增和修改页面，add为新增，update为修改 --&gt;<br>    &lt;el-button v-if=&quot;this.optType === &#x27;add&#x27;&quot; type=&quot;primary&quot; @click=&quot;submitForm(&#x27;ruleForm&#x27;, true)&quot;&gt;保存并继续添加员工<br>    &lt;/el-button&gt;<br>    &lt;el-button @click=&quot;() =&gt; this.$router.push(&#x27;/employee&#x27;)&quot;&gt;返回&lt;/el-button&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
+
+<p>3.如果是修改操作，需要根据<code>id</code>查询员工原始信息用于页面回显，在<code>employee.ts</code>中创建如下方法。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 根据id查询员工</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">queryEmployeeById</span> = (<span class="hljs-params"><span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span></span>) =&gt;<br><span class="hljs-title function_">request</span>(&#123;<br>    <span class="hljs-string">&#x27;url&#x27;</span>: <span class="hljs-string">`/employee/<span class="hljs-subst">$&#123;id&#125;</span>`</span>,<br>    <span class="hljs-string">&#x27;method&#x27;</span>: <span class="hljs-string">&#x27;GET&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>4.在修改员工页面的<code>created</code>方法中查询员工原始信息用于页面数据回显。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-title function_">created</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">//获取路由参数（id），如果有则为修改操作，否则为新增操作</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">optType</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">$route</span>.<span class="hljs-property">query</span>.<span class="hljs-property">id</span> ? <span class="hljs-string">&#x27;update&#x27;</span> : <span class="hljs-string">&#x27;add&#x27;</span><br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">optType</span> === <span class="hljs-string">&#x27;update&#x27;</span>) &#123;<br>        <span class="hljs-comment">//修改操作，需要根据id查询员工信息用于页面回显</span><br>        <span class="hljs-title function_">queryEmployeeById</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$route</span>.<span class="hljs-property">query</span>.<span class="hljs-property">id</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (res.<span class="hljs-property">data</span>.<span class="hljs-property">code</span> === <span class="hljs-number">1</span>) &#123;<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">ruleForm</span> = res.<span class="hljs-property">data</span>.<span class="hljs-property">data</span><br>            &#125;<br>        &#125;)<br>    &#125;<br>&#125;,<br></code></pre></td></tr></table></figure>
+
+<p>5.如果是修改操作，“保存并继续添加员工”按钮则不需要显示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;div class=&quot;subBox&quot;&gt;<br>    &lt;!-- submitForm中第一个参数对ruleForm再次校验；第二个参数，false：保存后跳转分页查询页面，true：保存后留在当前页面继续添加 --&gt;<br>    &lt;el-button type=&quot;primary&quot; @click=&quot;submitForm(&#x27;ruleForm&#x27;, false)&quot;&gt;保存&lt;/el-button&gt;<br>    &lt;!-- 通过this.optType区分新增和修改页面，add为新增，update为修改 --&gt;<br>    &lt;el-button v-if=&quot;this.optType === &#x27;add&#x27;&quot; type=&quot;primary&quot; @click=&quot;submitForm(&#x27;ruleForm&#x27;, true)&quot;&gt;保存并继续添加员工<br>    &lt;/el-button&gt;<br>    &lt;el-button @click=&quot;() =&gt; this.$router.push(&#x27;/employee&#x27;)&quot;&gt;返回&lt;/el-button&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
+
+<p>6.在<code>employee.ts</code>中创建方法，用于修改员工。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 修改员工</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">updateEmployee</span> = (<span class="hljs-params"><span class="hljs-attr">params</span>: <span class="hljs-built_in">any</span></span>) =&gt;<br><span class="hljs-title function_">request</span>(&#123;<br>    <span class="hljs-string">&#x27;url&#x27;</span>: <span class="hljs-string">`/employee`</span>,<br>    <span class="hljs-string">&#x27;method&#x27;</span>: <span class="hljs-string">&#x27;PUT&#x27;</span>,<br>    <span class="hljs-string">&#x27;data&#x27;</span>: params <span class="hljs-comment">//请求体传参</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>7.修改<code>submitForm</code>方法，需要根据当前操作类型执行新增或者修改操作。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs TYpeScript"><span class="hljs-title function_">submitForm</span>(<span class="hljs-params">fromName, isContinue</span>) &#123;<br>    <span class="hljs-comment">//进行表单校验</span><br>    <span class="hljs-comment">//因为ref=&quot;ruleForm&quot;，所以通过$refs得到表单对象</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>[fromName].<span class="hljs-title function_">validate</span>(<span class="hljs-function">(<span class="hljs-params">valid</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (valid) &#123;<br>            <span class="hljs-comment">//表单校验通过</span><br>            <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">optType</span> === <span class="hljs-string">&#x27;add&#x27;</span>) &#123;<br>                <span class="hljs-title function_">addEmployee</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ruleForm</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>                    <span class="hljs-keyword">if</span> (res.<span class="hljs-property">data</span>.<span class="hljs-property">code</span> === <span class="hljs-number">1</span>) &#123;<br>                        <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">success</span>(<span class="hljs-string">&#x27;员工添加成功！&#x27;</span>)<br><br>                        <span class="hljs-keyword">if</span> (isContinue) &#123;<br>                            <span class="hljs-variable language_">this</span>.<span class="hljs-property">ruleForm</span> = &#123;<br>                                <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>                                <span class="hljs-attr">username</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>                                <span class="hljs-attr">sex</span>: <span class="hljs-string">&#x27;1&#x27;</span>,<br>                                <span class="hljs-attr">phone</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>                                <span class="hljs-attr">idNumber</span>: <span class="hljs-string">&#x27;&#x27;</span><br>                            &#125;<br>                        &#125; <span class="hljs-keyword">else</span> &#123;<br>                            <span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;/employee&#x27;</span>)<br>                        &#125;<br><br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">error</span>(res.<span class="hljs-property">data</span>.<span class="hljs-property">msg</span>)<br>                    &#125;<br>                &#125;)<br>            &#125;<span class="hljs-keyword">else</span>&#123;<span class="hljs-comment">//修改操作</span><br>                <span class="hljs-title function_">updateEmployee</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ruleForm</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>                    <span class="hljs-keyword">if</span>(res.<span class="hljs-property">data</span>.<span class="hljs-property">code</span> === <span class="hljs-number">1</span>)&#123;<br>                        <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">success</span>(<span class="hljs-string">&#x27;员工信息修改成功&#x27;</span>)<br>                        <span class="hljs-variable language_">this</span>.<span class="hljs-property">$router</span>.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;/employee&#x27;</span>)<br>                    &#125;<span class="hljs-keyword">else</span>&#123;<br>                        <span class="hljs-variable language_">this</span>.<span class="hljs-property">$message</span>.<span class="hljs-title function_">error</span>(res.<span class="hljs-property">data</span>.<span class="hljs-property">msg</span>)<br>                    &#125;<br>                &#125;)<br>            &#125;<br>        &#125;<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="套餐管理"><a href="#套餐管理" class="headerlink" title="套餐管理"></a>套餐管理</h3><h4 id="套餐分页查询"><a href="#套餐分页查询" class="headerlink" title="套餐分页查询"></a>套餐分页查询</h4>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/" class="category-chain-item">Java项目苍穹外卖</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/" class="print-no-link">#Java项目苍穹外卖</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java项目苍穹外卖：前端开发</div>
+      <div>http://surourou8.github.io/2024/11/21/Java项目苍穹外卖：前端开发/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Su Rourou</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年11月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/11/21/Java%E9%A1%B9%E7%9B%AE%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96%EF%BC%9A%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Java项目苍穹外卖：开发环境搭建">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java项目苍穹外卖：开发环境搭建</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/29/JavaWeb%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%EF%BC%9AMaven%E9%AB%98%E7%BA%A7/" title="JavaWeb后端开发：Maven高级">
+                        <span class="hidden-mobile">JavaWeb后端开发：Maven高级</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"rJpGTwUuJT20doYmqiMHV4UP-gzGzoHsz","appKey":"S6LRxMNdv70LjI3DIZEkvFDc","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访问数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
