@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Java-Redis：Redis高级</title>
+    <link href="/2025/03/29/Java-Redis%EF%BC%9ARedis%E9%AB%98%E7%BA%A7/"/>
+    <url>/2025/03/29/Java-Redis%EF%BC%9ARedis%E9%AB%98%E7%BA%A7/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h2><h3 id="分布式缓存"><a href="#分布式缓存" class="headerlink" title="分布式缓存"></a>分布式缓存</h3><h4 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a>Redis持久化</h4><ul><li>RDB：数据快照，fork子进程</li><li>AOF：追加文件（命令日志文件）</li><li>混合持久化（Redis 4.0+)</li></ul><h4 id="Redis主从"><a href="#Redis主从" class="headerlink" title="Redis主从"></a>Redis主从</h4><ul><li>全量同步：RDB</li><li>增量同步：repl_backlog（环形数组）</li></ul><h4 id="Redis哨兵"><a href="#Redis哨兵" class="headerlink" title="Redis哨兵"></a>Redis哨兵</h4><ul><li>监控：每隔一秒ping，主观下线、客观下线</li><li>自动故障恢复：<ul><li>选择master依据：slave与master断开时间长短、slave-priority（小）、offset（大）、运行id（小）</li><li>切换：slaveof no one</li></ul></li><li>通知：Redis客户端</li></ul><h4 id="Redis分片集群"><a href="#Redis分片集群" class="headerlink" title="Redis分片集群"></a>Redis分片集群</h4><p>分片集群：多个master，互相ping</p><p>散列插槽：key和插槽绑定，16384个</p><p>集群伸缩：add-node（需要转移插槽）</p><p>故障转移：</p><ul><li>自动故障转移：提升slave为master</li><li>手动故障转移：cluster failover</li></ul><h3 id="多级缓存"><a href="#多级缓存" class="headerlink" title="多级缓存"></a>多级缓存</h3><h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><h2 id="原理篇"><a href="#原理篇" class="headerlink" title="原理篇"></a>原理篇</h2><h3 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h3><h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><ul><li><p>动态字符串SDS：动态扩容、内存预分配</p></li><li><p>intset：升序、唯一、二分查找</p></li><li><p>Dict：</p><ul><li>字典、哈希表、哈希节点</li><li>ht[0]平常用，ht[1]rehash（渐进式）</li><li>伸缩</li></ul></li><li><p>ZipList：连续内存“双向链表”、连锁更新问题</p></li><li><p>QuickList：节点为ZipList的双端链表</p></li><li><p>SkipList：双向链表，score、ele排序，多层指针</p></li><li><p>RedisObject</p><table><thead><tr><th><strong>数据类型</strong></th><th><strong>编码方式</strong></th></tr></thead><tbody><tr><td>OBJ_STRING</td><td>int、embstr、raw</td></tr><tr><td>OBJ_LIST</td><td>LinkedList和ZipList(3.2以前)、QuickList（3.2以后）</td></tr><tr><td>OBJ_SET</td><td>intset、HT</td></tr><tr><td>OBJ_ZSET</td><td>ZipList、HT、SkipList</td></tr><tr><td>OBJ_HASH</td><td>ZipList、HT</td></tr></tbody></table></li></ul><h4 id="Redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h4><ul><li><p>String：embstr（小于44字节）、raw、int（整数）</p></li><li><p>List：</p><ul><li>3.2前：ZipList（数量＜512，大小＜64字节），LinkedList</li><li>3.2后：QuickList</li></ul></li><li><p>Set：</p><ul><li>intSet：数量＜set-max-intset-entries</li><li>Dict：key存元素、value为null</li></ul></li><li><p>Zset：</p><ul><li>ZipList：数量＜zset_max_ziplist_entries（128），大小＜zset_max_ziplist_value（64）字节，element（前）和score（后）紧挨，按score升序排序</li><li>Dict</li><li>SkipList</li></ul></li><li><p>Hash：</p><ul><li><p>ZipList：数量＜hash-max-ziplist-entries（512），</p><p>大小＜hash-max-ziplist-value（64）</p></li><li><p>Dict</p></li></ul></li></ul><h3 id="Redis网络模型"><a href="#Redis网络模型" class="headerlink" title="Redis网络模型"></a>Redis网络模型</h3><p>进程的寻址空间划分成两部分：<strong>内核空间、用户空间</strong></p><p><img src="/2025/03/29/Java-Redis%EF%BC%9ARedis%E9%AB%98%E7%BA%A7/%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4%E5%92%8C%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4.png"></p><p>5中网络模型对比：</p><p><img src="/2025/03/29/Java-Redis%EF%BC%9ARedis%E9%AB%98%E7%BA%A7/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94.png"></p><h3 id="Redis通信协议-RESP协议"><a href="#Redis通信协议-RESP协议" class="headerlink" title="Redis通信协议-RESP协议"></a>Redis通信协议-RESP协议</h3><h4 id="过期key处理"><a href="#过期key处理" class="headerlink" title="过期key处理"></a>过期key处理</h4><ul><li><p>惰性清理：查找key时判断</p></li><li><p>定期清理：逐个遍历db，逐个遍历db中的bucket，抽取20个key判断是否过期</p><ul><li><p>SLOW（initServer）：执行频率默认为10，每次不超过25ms</p></li><li><p>FAST（beforeSleep）：执行频率不固定，但两次间隔不低于2ms，每次耗时不超过1ms</p></li></ul></li></ul><h4 id="内存淘汰"><a href="#内存淘汰" class="headerlink" title="内存淘汰"></a>内存淘汰</h4><ul><li>noeviction： 不淘汰任何key，内存满时不允许写入新数据，默认。</li><li>volatile-ttl： 对设置了TTL的key，比较key的剩余TTL值，TTL越小越先被淘汰</li><li>allkeys-random：对全体key ，随机进行淘汰。也就是直接从db-&gt;dict中随机挑选</li><li>volatile-random：对设置了TTL的key ，随机进行淘汰。也就是从db-&gt;expires中随机挑选。</li><li>allkeys-lru： 对全体key，基于LRU算法进行淘汰</li><li>volatile-lru： 对设置了TTL的key，基于LRU算法进行淘汰</li><li>allkeys-lfu： 对全体key，基于LFU算法进行淘汰</li><li>volatile-lfu： 对设置了TTL的key，基于LFI算法进行淘汰</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java-Redis</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java-Redis</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java-Redis：实战篇（3）</title>
     <link href="/2024/12/19/Java-Redis%EF%BC%9A%E5%AE%9E%E6%88%98%E7%AF%87%EF%BC%883%EF%BC%89/"/>
     <url>/2024/12/19/Java-Redis%EF%BC%9A%E5%AE%9E%E6%88%98%E7%AF%87%EF%BC%883%EF%BC%89/</url>
